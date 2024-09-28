@@ -646,46 +646,36 @@ Experimental results suggest the learned motion-based constraint reduces the dis
 </style>
 
 <script>
-    // JavaScript to handle independent navigation for each row
+    // JavaScript to handle navigation
+    const videoGroups = document.querySelectorAll('.video-group');
+    let currentGroup = 0;
 
-    // Single Object Navigation
-    let currentIndexSingle = 0;
-    const videoGroupsSingle = document.querySelectorAll('#video-groups-single .video-group');
+    // Show the first group initially
+    videoGroups[currentGroup].classList.add('active');
 
-    document.getElementById('prevBtnSingle').addEventListener('click', () => {
-        videoGroupsSingle[currentIndexSingle].style.display = 'none';
-        currentIndexSingle = (currentIndexSingle - 1 + videoGroupsSingle.length) % videoGroupsSingle.length;
-        videoGroupsSingle[currentIndexSingle].style.display = 'block';
+    // Function to update video groups
+    function updateGroup(index) {
+        videoGroups[currentGroup].classList.remove('active');
+        currentGroup = index;
+        videoGroups[currentGroup].classList.add('active');
+    }
+
+    // Handle next button with looping
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        if (currentGroup < videoGroups.length - 1) {
+            updateGroup(currentGroup + 1);
+        } else {
+            updateGroup(0); // Loop to the first group
+        }
     });
 
-    document.getElementById('nextBtnSingle').addEventListener('click', () => {
-        videoGroupsSingle[currentIndexSingle].style.display = 'none';
-        currentIndexSingle = (currentIndexSingle + 1) % videoGroupsSingle.length;
-        videoGroupsSingle[currentIndexSingle].style.display = 'block';
-    });
-
-    // Multiple Object Navigation
-    let currentIndexMultiple = 0;
-    const videoGroupsMultiple = document.querySelectorAll('#video-groups-multiple .video-group');
-
-    document.getElementById('prevBtnMultiple').addEventListener('click', () => {
-        videoGroupsMultiple[currentIndexMultiple].style.display = 'none';
-        currentIndexMultiple = (currentIndexMultiple - 1 + videoGroupsMultiple.length) % videoGroupsMultiple.length;
-        videoGroupsMultiple[currentIndexMultiple].style.display = 'block';
-    });
-
-    document.getElementById('nextBtnMultiple').addEventListener('click', () => {
-        videoGroupsMultiple[currentIndexMultiple].style.display = 'none';
-        currentIndexMultiple = (currentIndexMultiple + 1) % videoGroupsMultiple.length;
-        videoGroupsMultiple[currentIndexMultiple].style.display = 'block';
-    });
-
-    // Initialize the display of video groups
-    videoGroupsSingle.forEach((group, index) => {
-        group.style.display = index === 0 ? 'block' : 'none';
-    });
-    videoGroupsMultiple.forEach((group, index) => {
-        group.style.display = index === 0 ? 'block' : 'none';
+    // Handle previous button with looping
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        if (currentGroup > 0) {
+            updateGroup(currentGroup - 1);
+        } else {
+            updateGroup(videoGroups.length - 1); // Loop to the last group
+        }
     });
 </script>
 
