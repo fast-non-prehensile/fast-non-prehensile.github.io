@@ -185,7 +185,7 @@ Experimental results suggest the learned motion-based constraint reduces the dis
 <section class="hero is-light is-small">
     <div class="hero-body">
         <h2 class="title is-3">Experiments</h2>
-        <div class="container" style="overflow-y: auto; max-height: 80vh;">
+        <div class="video-scroll-container">
 
             <!-- First Group of 5 Videos -->
             <div class="video-group">
@@ -266,20 +266,31 @@ Experimental results suggest the learned motion-based constraint reduces the dis
 </section>
 
 <style>
+    .video-scroll-container {
+        display: flex;
+        overflow-x: auto;
+        /* Allow horizontal scrolling */
+        gap: 20px;
+        /* Space between video groups */
+        padding: 20px;
+        scroll-snap-type: x mandatory;
+        /* Snap scrolling to each group */
+    }
+
     .video-group {
-        margin-bottom: 30px;
+        flex: 0 0 100%;
+        /* Take full width of the container */
+        scroll-snap-align: start;
+        /* Align the group to start when scrolling */
     }
 
     .video-container {
         display: flex;
-        gap: 10px;
         justify-content: space-around;
-        /* Spacing around items */
+        gap: 10px;
     }
 
     .item {
-        flex: 0 0 18%;
-        /* Set width for 5 items to fit in one row */
         text-align: center;
     }
 
