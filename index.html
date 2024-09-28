@@ -186,86 +186,89 @@ Experimental results suggest the learned motion-based constraint reduces the dis
     <div class="hero-body">
         <h2 class="title is-3">Experiments</h2>
 
-        <!-- Navigation Buttons -->
-        <div class="navigation-buttons">
-            <button id="prevBtn" class="nav-btn">Previous</button>
-            <button id="nextBtn" class="nav-btn">Next</button>
-        </div>
-
         <div class="video-scroll-container">
-            <!-- First Group of 5 Videos -->
-            <div class="video-group">
-                <h3 class="small-big-title">Cube</h3>
-                <div class="video-container">
-                    <div class="item">
-                        <h4 class="small-title">Baseline Coulomb Friction Constraint</h4>
-                        <video poster="" id="cube_CC" autoplay controls muted loop playsinline>
-                            <source src="videos/cube/cube_CC.mp4" type="video/mp4">
-                        </video>
+            <!-- Previous Button -->
+            <button id="prevBtn" class="nav-btn">←</button>
+
+            <!-- Video Groups Container -->
+            <div class="video-groups">
+                <!-- First Group of 5 Videos -->
+                <div class="video-group">
+                    <h3 class="small-big-title">Cube</h3>
+                    <div class="video-container">
+                        <div class="item">
+                            <h4 class="small-title">Baseline Coulomb Friction Constraint</h4>
+                            <video poster="" id="cube_CC" autoplay controls muted loop playsinline>
+                                <source src="videos/cube/cube_CC.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: PLA Model</h4>
+                            <video poster="" id="cube_pla" autoplay controls muted loop playsinline>
+                                <source src="videos/cube/cube_pla.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: Glass Model</h4>
+                            <video poster="" id="cube_glass" autoplay controls muted loop playsinline>
+                                <source src="videos/cube/cube_glass.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 1</h4>
+                            <video poster="" id="cube_A1" autoplay controls muted loop playsinline>
+                                <source src="videos/cube/cube_A1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 2</h4>
+                            <video poster="" id="cube_A2" autoplay controls muted loop playsinline>
+                                <source src="videos/cube/cube_A2.mp4" type="video/mp4">
+                            </video>
+                        </div>
                     </div>
-                    <div class="item">
-                        <h4 class="small-title">Learned Motion-Based Constraint: PLA Model</h4>
-                        <video poster="" id="cube_pla" autoplay controls muted loop playsinline>
-                            <source src="videos/cube/cube_pla.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item">
-                        <h4 class="small-title">Learned Motion-Based Constraint: Glass Model</h4>
-                        <video poster="" id="cube_glass" autoplay controls muted loop playsinline>
-                            <source src="videos/cube/cube_glass.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item">
-                        <h4 class="small-title">Ablation Study 1</h4>
-                        <video poster="" id="cube_A1" autoplay controls muted loop playsinline>
-                            <source src="videos/cube/cube_A1.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item">
-                        <h4 class="small-title">Ablation Study 2</h4>
-                        <video poster="" id="cube_A2" autoplay controls muted loop playsinline>
-                            <source src="videos/cube/cube_A2.mp4" type="video/mp4">
-                        </video>
+                </div>
+
+                <!-- Second Group of 5 Videos -->
+                <div class="video-group">
+                    <h3 class="small-big-title">Gusset</h3>
+                    <div class="video-container">
+                        <div class="item">
+                            <h4 class="small-title">Baseline Coulomb Friction Constraint</h4>
+                            <video poster="" id="gusset_CC" autoplay controls muted loop playsinline>
+                                <source src="videos/gusset/gusset_CC.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: PLA Model</h4>
+                            <video poster="" id="gusset_pla" autoplay controls muted loop playsinline>
+                                <source src="videos/gusset/gusset_pla.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: Glass Model</h4>
+                            <video poster="" id="gusset_glass" autoplay controls muted loop playsinline>
+                                <source src="videos/gusset/gusset_glass.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 1</h4>
+                            <video poster="" id="gusset_A1" autoplay controls muted loop playsinline>
+                                <source src="videos/gusset/gusset_A1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 2</h4>
+                            <video poster="" id="gusset_A2" autoplay controls muted loop playsinline>
+                                <source src="videos/gusset/gusset_A2.mp4" type="video/mp4">
+                            </video>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Second Group of 5 Videos -->
-            <div class="video-group">
-                <h3 class="small-big-title">Gusset</h3>
-                <div class="video-container">
-                    <div class="item">
-                        <h4 class="small-title">Baseline Coulomb Friction Constraint</h4>
-                        <video poster="" id="gusset_CC" autoplay controls muted loop playsinline>
-                            <source src="videos/gusset/gusset_CC.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item">
-                        <h4 class="small-title">Learned Motion-Based Constraint: PLA Model</h4>
-                        <video poster="" id="gusset_pla" autoplay controls muted loop playsinline>
-                            <source src="videos/gusset/gusset_pla.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item">
-                        <h4 class="small-title">Learned Motion-Based Constraint: Glass Model</h4>
-                        <video poster="" id="gusset_glass" autoplay controls muted loop playsinline>
-                            <source src="videos/gusset/gusset_glass.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item">
-                        <h4 class="small-title">Ablation Study 1</h4>
-                        <video poster="" id="gusset_A1" autoplay controls muted loop playsinline>
-                            <source src="videos/gusset/gusset_A1.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item">
-                        <h4 class="small-title">Ablation Study 2</h4>
-                        <video poster="" id="gusset_A2" autoplay controls muted loop playsinline>
-                            <source src="videos/gusset/gusset_A2.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-            </div>
+            <!-- Next Button -->
+            <button id="nextBtn" class="nav-btn">→</button>
         </div>
     </div>
 </section>
@@ -273,14 +276,31 @@ Experimental results suggest the learned motion-based constraint reduces the dis
 <style>
     .video-scroll-container {
         display: flex;
-        gap: 20px;
+        align-items: center;
+        gap: 10px;
         padding: 20px;
+    }
+
+    .nav-btn {
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 2em;
+        /* Larger font for arrows */
+        background-color: #f0f0f0;
+        /* Light gray background */
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .video-groups {
+        flex: 1;
+        /* Allow it to take up the available space */
     }
 
     .video-group {
         display: none;
         /* Hide all groups initially */
-        flex: 0 0 100%;
     }
 
     .video-group.active {
@@ -313,18 +333,6 @@ Experimental results suggest the learned motion-based constraint reduces the dis
         width: 100%;
         height: auto;
     }
-
-    .navigation-buttons {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .nav-btn {
-        padding: 10px 20px;
-        margin: 0 10px;
-        cursor: pointer;
-        font-size: 1em;
-    }
 </style>
 
 <script>
@@ -356,6 +364,7 @@ Experimental results suggest the learned motion-based constraint reduces the dis
         }
     });
 </script>
+
 
 
 
