@@ -188,62 +188,45 @@
 
 <section class="hero is-light is-small">
     <div class="hero-body">
+        <h2 class="title is-3">Experiments</h2>
         <div class="container">
+            <h1 class="big-title">Cube</h1> <!-- Big title for the group of 5 videos -->
             <div id="results-carousel" class="carousel results-carousel">
                 <div class="video-container">
-                    <!-- Video items - repeat this block for 60 videos -->
-                    <div class="item item-steve">
+                    <!-- Video items - repeat this block for 35 videos -->
+                    <div class="item">
+                        <h3 class="small-title">Baseline Coulomb Friction Constraint</h3>
                         <video poster="" id="cube_CC" autoplay controls muted loop playsinline height="100%">
                             <source src="videos/cube/cube_CC.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <div class="item item-chair-tp">
+                    <div class="item">
+                        <h3 class="small-title">Learned Motion-Based Constraint: PLA Model</h3>
                         <video poster="" id="cube_pla" autoplay controls muted loop playsinline height="100%">
                             <source src="videos/cube/cube_pla.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <div class="item item-shiba">
+                    <div class="item">
+                        <h3 class="small-title">Learned Motion-Based Constraint: Glass Model</h3>
                         <video poster="" id="cube_glass" autoplay controls muted loop playsinline height="100%">
                             <source src="videos/cube/cube_glass.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <div class="item item-fullbody">
+                    <div class="item">
+                        <h3 class="small-title">Ablation Study 1</h3>
                         <video poster="" id="cube_A1" autoplay controls muted loop playsinline height="100%">
                             <source src="videos/cube/cube_A1.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <div class="item item-blueshirt">
+                    <div class="item">
+                        <h3 class="small-title">Ablation Study 2</h3>
                         <video poster="" id="cube_A2" autoplay controls muted loop playsinline height="100%">
                             <source src="videos/cube/cube_A2.mp4" type="video/mp4">
                         </video>
                     </div>
 
-                    <div class="item item-steve"></div>
-                        <video poster="" id="gusset_CC" autoplay controls muted loop playsinline height="100%">
-                            <source src="videos/gusset/gusset_CC.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item item-chair-tp">
-                        <video poster="" id="gusset_pla" autoplay controls muted loop playsinline height="100%">
-                            <source src="videos/gusset/gusset_pla.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item item-shiba">
-                        <video poster="" id="gusset_glass" autoplay controls muted loop playsinline height="100%">
-                            <source src="videos/gusset/gusset_glass.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item item-fullbody">
-                        <video poster="" id="gusset_A1" autoplay controls muted loop playsinline height="100%">
-                            <source src="videos/gusset/gusset_A1" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item item-blueshirt">
-                        <video poster="" id="gusset_A2" autoplay controls muted loop playsinline height="100%">
-                            <source src="videos/gusset/gusset_A2" type="video/mp4">
-                        </video>
-                    </div>
-                    <!-- Repeat similar blocks for 60 videos -->
+                    <!-- Add similar blocks for all 35 videos -->
+
                 </div>
             </div>
         </div>
@@ -264,6 +247,19 @@
     .item {
         flex: 0 0 20%;
         /* Show 5 videos at a time */
+        text-align: center;
+        /* Center align titles */
+    }
+
+    .big-title {
+        font-size: 2em;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .small-title {
+        font-size: 1em;
+        margin: 5px 0;
     }
 
     video {
@@ -272,6 +268,7 @@
         height: auto;
     }
 </style>
+
 
 
 </html>
