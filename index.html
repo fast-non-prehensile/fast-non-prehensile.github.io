@@ -474,7 +474,7 @@ Experimental results suggest the learned motion-based constraint reduces the dis
             <!-- Video Groups Container -->
             <div class="video-groups">
                 <!-- 1st Group of 5 Videos -->
-                <div class="video-group">
+                <div class="video-group2">
                     <h3 class="small-big-title">3 Gussets</h3>
                     <div class="video-container">
                         <div class="item">
@@ -511,7 +511,7 @@ Experimental results suggest the learned motion-based constraint reduces the dis
                 </div>
 
                 <!-- 2nd Group of 5 Videos -->
-                <div class="video-group">
+                <div class="video-group2">
                     <h3 class="small-big-title">4 Coins</h3>
                     <div class="video-container">
                         <div class="item">
@@ -548,7 +548,7 @@ Experimental results suggest the learned motion-based constraint reduces the dis
                 </div>
 
                 <!-- 3rd Group of 5 Videos -->
-                <div class="video-group">
+                <div class="video-group2">
                     <h3 class="small-big-title">4 Small Glass Containers</h3>
                     <div class="video-container">
                         <div class="item">
@@ -685,6 +685,38 @@ Experimental results suggest the learned motion-based constraint reduces the dis
             updateGroup(videoGroups.length - 1); // Loop to the last group
         }
     });
+
+    // JavaScript to handle navigation
+        const videoGroups2 = document.querySelectorAll('.video-group2');
+        let currentGroup2 = 0;
+
+        // Show the first group initially
+        videoGroup2[currentGroup2].classList.add('active');
+
+        // Function to update video groups
+        function updateGroup2(index) {
+            videoGroups2[currentGroup2].classList.remove('active');
+            currentGroup2 = index;
+            videoGroups2[currentGroup2].classList.add('active');
+        }
+
+        // Handle next button with looping
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if (currentGroup2 < videoGroups2.length - 1) {
+                updateGroup2(currentGroup2 + 1);
+            } else {
+                updateGroup2(0); // Loop to the first group
+            }
+        });
+
+        // Handle previous button with looping
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentGroup2 > 0) {
+                updateGroup2(currentGroup2 - 1);
+            } else {
+                updateGroup2(videoGroups2.length - 1); // Loop to the last group
+            }
+        });
 </script>
 
 
