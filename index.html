@@ -461,8 +461,6 @@ Experimental results suggest the learned motion-based constraint reduces the dis
 
 
 
-
-
 <section class="hero is-light is-small">
     <div class="hero-body">
         <!-- <h2 class="title is-3">Experiments</h2> -->
@@ -591,6 +589,97 @@ Experimental results suggest the learned motion-based constraint reduces the dis
 </section>
 
 
+
+<section class="hero is-light is-small"></section>
+    <div class="hero-body">
+        <!-- <h2 class="title is-3">Experiments</h2> -->
+        <h2 class="title is-5">2 Experiments with Out-of-Distribution Objects</h2>
+        <div class="video-scroll-container">
+            <!-- Previous Button -->
+            <button id="prevBtn3" class="nav-btn">←</button>
+
+            <!-- Video Groups Container -->
+            <div class="video-groups">
+                <!-- 1st Group of 5 Videos -->
+                <div class="video-group3">
+                    <h3 class="small-big-title">Sponge (Hard Side)</h3>
+                    <div class="video-container">
+                        <div class="item">
+                            <h4 class="small-title">Baseline Coulomb Friction Constraint</h4>
+                            <video poster="" id="sponge_hard_CC" autoplay controls muted loop playsinline>
+                                <source src="videos/sponge_hard/sponge_hard_CC.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: PLA Model</h4>
+                            <video poster="" id="sponge_hard_pla" autoplay controls muted loop playsinline>
+                                <source src="videos/sponge_hard/sponge_hard_pla.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: Glass Model</h4>
+                            <video poster="" id="sponge_hard_glass" autoplay controls muted loop playsinline>
+                                <source src="videos/sponge_hard/sponge_hard_glass.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 1</h4>
+                            <video poster="" id="sponge_hard_A1" autoplay controls muted loop playsinline>
+                                <source src="videos/sponge_hard/sponge_hard_A1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 2</h4>
+                            <video poster="" id="sponge_hard_A2" autoplay controls muted loop playsinline>
+                                <source src="videos/sponge_hard/sponge_hard_A2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2nd Group of 5 Videos -->
+                <div class="video-group3">
+                    <h3 class="small-big-title">Sponge (Soft Side)</h3>
+                    <div class="video-container">
+                        <div class="item">
+                            <h4 class="small-title">Baseline Coulomb Friction Constraint</h4>
+                            <video poster="" id="sponge_soft_CC" autoplay controls muted loop playsinline>
+                                <source src="videos/sponge_soft/sponge_soft_CC.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: PLA Model</h4>
+                            <video poster="" id="sponge_soft_pla" autoplay controls muted loop playsinline>
+                                <source src="videos/sponge_soft/sponge_soft_pla.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: Glass Model</h4>
+                            <video poster="" id="sponge_soft_glass" autoplay controls muted loop playsinline>
+                                <source src="videos/sponge_soft/sponge_soft_glass.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 1</h4>
+                            <video poster="" id="sponge_soft_A1" autoplay controls muted loop playsinline>
+                                <source src="videos/sponge_soft/sponge_soft_A1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 2</h4>
+                            <video poster="" id="sponge_soft_A2" autoplay controls muted loop playsinline>
+                                <source src="videos/sponge_soft/sponge_soft_A2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Next Button -->
+            <button id="nextBtn3" class="nav-btn">→</button>
+        </div>
+    </div>
+</section>
+
 <style>
     .video-scroll-container {
         display: flex;
@@ -616,11 +705,11 @@ Experimental results suggest the learned motion-based constraint reduces the dis
         /* Allow it to take up the available space */
     }
 
-    .video-group, .video-group2 {
+    .video-group, .video-group2, .video-group3 {
     display: none; /* Hide all video groups initially */
     }
 
-    .video-group.active, .video-group2.active {
+    .video-group.active, .video-group2.active, .video-group3.active {
         display: block; /* Show only the active video group */
     }
 
@@ -686,34 +775,66 @@ Experimental results suggest the learned motion-based constraint reduces the dis
     });
 
     // JavaScript to handle navigation for the second group
-        const videoGroups2 = document.querySelectorAll('.video-group2');
-        let currentGroup2 = 0;
+    const videoGroups2 = document.querySelectorAll('.video-group2');
+    let currentGroup2 = 0;
+
+    // Show the first group initially
+    videoGroups2[currentGroup2].classList.add('active');
+
+    // Function to update video groups
+    function updateGroup2(index) {
+        videoGroups2[currentGroup2].classList.remove('active');
+        currentGroup2 = index;
+        videoGroups2[currentGroup2].classList.add('active');
+    }
+
+    // Handle next button with looping
+    document.getElementById('nextBtn2').addEventListener('click', () => {
+        if (currentGroup2 < videoGroups2.length - 1) {
+            updateGroup2(currentGroup2 + 1);
+        } else {
+            updateGroup2(0); // Loop to the first group
+        }
+    });
+
+    // Handle previous button with looping
+    document.getElementById('prevBtn2').addEventListener('click', () => {
+        if (currentGroup2 > 0) {
+            updateGroup2(currentGroup2 - 1);
+        } else {
+            updateGroup2(videoGroups2.length - 1); // Loop to the last group
+        }
+    });
+
+    // JavaScript to handle navigation for the third group
+        const videoGroups3 = document.querySelectorAll('.video-group3');
+        let currentGroup3 = 0;
 
         // Show the first group initially
-        videoGroups2[currentGroup2].classList.add('active');
+        videoGroups3[currentGroup3].classList.add('active');
 
         // Function to update video groups
-        function updateGroup2(index) {
-            videoGroups2[currentGroup2].classList.remove('active');
-            currentGroup2 = index;
-            videoGroups2[currentGroup2].classList.add('active');
+        function updateGroup3(index) {
+            videoGroups3[currentGroup3].classList.remove('active');
+            currentGroup3 = index;
+            videoGroups3[currentGroup3].classList.add('active');
         }
 
         // Handle next button with looping
-        document.getElementById('nextBtn2').addEventListener('click', () => {
-            if (currentGroup2 < videoGroups2.length - 1) {
-                updateGroup2(currentGroup2 + 1);
+        document.getElementById('nextBtn3').addEventListener('click', () => {
+            if (currentGroup3 < videoGroups3.length - 1) {
+                updateGroup3(currentGroup3 + 1);
             } else {
-                updateGroup2(0); // Loop to the first group
+                updateGroup3(0); // Loop to the first group
             }
         });
 
         // Handle previous button with looping
-        document.getElementById('prevBtn2').addEventListener('click', () => {
-            if (currentGroup2 > 0) {
-                updateGroup2(currentGroup2 - 1);
+        document.getElementById('prevBtn3').addEventListener('click', () => {
+            if (currentGroup3 > 0) {
+                updateGroup3(currentGroup3 - 1);
             } else {
-                updateGroup2(videoGroups2.length - 1); // Loop to the last group
+                updateGroup3(videoGroups3.length - 1); // Loop to the last group
             }
         });
 
