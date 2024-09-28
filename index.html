@@ -185,8 +185,14 @@ Experimental results suggest the learned motion-based constraint reduces the dis
 <section class="hero is-light is-small">
     <div class="hero-body">
         <h2 class="title is-3">Experiments</h2>
-        <div class="video-scroll-container">
 
+        <!-- Navigation Buttons -->
+        <div class="navigation-buttons">
+            <button id="prevBtn" class="nav-btn">Previous</button>
+            <button id="nextBtn" class="nav-btn">Next</button>
+        </div>
+
+        <div class="video-scroll-container">
             <!-- First Group of 5 Videos -->
             <div class="video-group">
                 <h3 class="small-big-title">Cube</h3>
@@ -260,7 +266,6 @@ Experimental results suggest the learned motion-based constraint reduces the dis
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
@@ -268,20 +273,19 @@ Experimental results suggest the learned motion-based constraint reduces the dis
 <style>
     .video-scroll-container {
         display: flex;
-        overflow-x: auto;
-        /* Allow horizontal scrolling */
         gap: 20px;
-        /* Space between video groups */
         padding: 20px;
-        scroll-snap-type: x mandatory;
-        /* Snap scrolling to each group */
     }
 
     .video-group {
+        display: none;
+        /* Hide all groups initially */
         flex: 0 0 100%;
-        /* Take full width of the container */
-        scroll-snap-align: start;
-        /* Align the group to start when scrolling */
+    }
+
+    .video-group.active {
+        display: block;
+        /* Show only the active group */
     }
 
     .video-container {
@@ -309,7 +313,50 @@ Experimental results suggest the learned motion-based constraint reduces the dis
         width: 100%;
         height: auto;
     }
+
+    .navigation-buttons {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .nav-btn {
+        padding: 10px 20px;
+        margin: 0 10px;
+        cursor: pointer;
+        font-size: 1em;
+    }
 </style>
+
+<script>
+    // JavaScript to handle navigation
+    const videoGroups = document.querySelectorAll('.video-group');
+    let currentGroup = 0;
+
+    // Show the first group initially
+    videoGroups[currentGroup].classList.add('active');
+
+    // Function to update video groups
+    function updateGroup(index) {
+        videoGroups[currentGroup].classList.remove('active');
+        currentGroup = index;
+        videoGroups[currentGroup].classList.add('active');
+    }
+
+    // Handle next button
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        if (currentGroup < videoGroups.length - 1) {
+            updateGroup(currentGroup + 1);
+        }
+    });
+
+    // Handle previous button
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        if (currentGroup > 0) {
+            updateGroup(currentGroup - 1);
+        }
+    });
+</script>
+
 
 
 
