@@ -185,17 +185,15 @@ Experimental results suggest the learned motion-based constraint reduces the dis
 <section class="hero is-light is-small">
     <div class="hero-body">
         <h2 class="title is-3">Experiments</h2>
-
-        <!-- 7 Experiments with Single Objects -->
         <h2 class="title is-5">7 Experiments with Single Objects</h2>
         <div class="video-scroll-container">
             <!-- Previous Button -->
-            <button id="prevBtnSingle" class="nav-btn">←</button>
+            <button id="prevBtn" class="nav-btn">←</button>
 
-            <!-- Video Groups Container for Single Objects -->
-            <div id="videoGroupsSingle" class="video-groups">
-                <!-- Example: 1st Video Group for Single Objects -->
-                <div class="video-group active">
+            <!-- Video Groups Container -->
+            <div class="video-groups">
+                <!-- 1st Group of 5 Videos -->
+                <div class="video-group">
                     <h3 class="small-big-title">Cube</h3>
                     <div class="video-container">
                         <div class="item">
@@ -204,48 +202,266 @@ Experimental results suggest the learned motion-based constraint reduces the dis
                                 <source src="videos/cube/cube_CC.mp4" type="video/mp4">
                             </video>
                         </div>
-                        <!-- Additional videos go here -->
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: PLA Model</h4>
+                            <video poster="" id="cube_pla" autoplay controls muted loop playsinline>
+                                <source src="videos/cube/cube_pla.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: Glass Model</h4>
+                            <video poster="" id="cube_glass" autoplay controls muted loop playsinline>
+                                <source src="videos/cube/cube_glass.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 1</h4>
+                            <video poster="" id="cube_A1" autoplay controls muted loop playsinline>
+                                <source src="videos/cube/cube_A1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 2</h4>
+                            <video poster="" id="cube_A2" autoplay controls muted loop playsinline>
+                                <source src="videos/cube/cube_A2.mp4" type="video/mp4">
+                            </video>
+                        </div>
                     </div>
                 </div>
-                <!-- More video groups for single objects... -->
-            </div>
 
-            <!-- Next Button -->
-            <button id="nextBtnSingle" class="nav-btn">→</button>
-        </div>
-
-        <!-- 3 Experiments with Multiple Objects -->
-        <h2 class="title is-5">3 Experiments with Multiple Objects</h2>
-        <div class="video-scroll-container">
-            <!-- Previous Button -->
-            <button id="prevBtnMultiple" class="nav-btn">←</button>
-
-            <!-- Video Groups Container for Multiple Objects -->
-            <div id="videoGroupsMultiple" class="video-groups">
-                <!-- Example: 1st Video Group for Multiple Objects -->
-                <div class="video-group active">
-                    <h3 class="small-big-title">3 Gussets</h3>
+                <!-- 2nd Group of 5 Videos -->
+                <div class="video-group">
+                    <h3 class="small-big-title">Gusset</h3>
                     <div class="video-container">
                         <div class="item">
                             <h4 class="small-title">Baseline Coulomb Friction Constraint</h4>
-                            <video poster="" id="gusset3_CC" autoplay controls muted loop playsinline>
-                                <source src="videos/gusset3/gusset3_CC.mp4" type="video/mp4">
+                            <video poster="" id="gusset_CC" autoplay controls muted loop playsinline>
+                                <source src="videos/gusset/gusset_CC.mp4" type="video/mp4">
                             </video>
                         </div>
-                        <!-- Additional videos go here -->
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: PLA Model</h4>
+                            <video poster="" id="gusset_pla" autoplay controls muted loop playsinline>
+                                <source src="videos/gusset/gusset_pla.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: Glass Model</h4>
+                            <video poster="" id="gusset_glass" autoplay controls muted loop playsinline>
+                                <source src="videos/gusset/gusset_glass.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 1</h4>
+                            <video poster="" id="gusset_A1" autoplay controls muted loop playsinline>
+                                <source src="videos/gusset/gusset_A1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 2</h4>
+                            <video poster="" id="gusset_A2" autoplay controls muted loop playsinline>
+                                <source src="videos/gusset/gusset_A2.mp4" type="video/mp4">
+                            </video>
+                        </div>
                     </div>
                 </div>
-                <!-- More video groups for multiple objects... -->
-            </div>
 
+                <!-- 3rd Group of 5 Videos -->
+                <div class="video-group">
+                    <h3 class="small-big-title">Small Glass Container</h3>
+                    <div class="video-container">
+                        <div class="item">
+                            <h4 class="small-title">Baseline Coulomb Friction Constraint</h4>
+                            <video poster="" id="glass_small_CC" autoplay controls muted loop playsinline>
+                                <source src="videos/glass_small/glass_small_CC.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: PLA Model</h4>
+                            <video poster="" id="glass_small_pla" autoplay controls muted loop playsinline>
+                                <source src="videos/glass_small/glass_small_pla.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: Glass Model</h4>
+                            <video poster="" id="glass_small_glass" autoplay controls muted loop playsinline>
+                                <source src="videos/glass_small/glass_small_glass.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 1</h4>
+                            <video poster="" id="glass_small_A1" autoplay controls muted loop playsinline>
+                                <source src="videos/glass_small/glass_small_A1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <!-- <div class="item">
+                            <h4 class="small-title">Ablation Study 2</h4>
+                            <video poster="" id="glass_small_A2" autoplay controls muted loop playsinline>
+                                <source src="videos/glass_small/glass_small_A2.mp4" type="video/mp4">
+                            </video>
+                        </div> -->
+                    </div>
+                </div>
+
+                <!-- 4th Group of 5 Videos -->
+                <div class="video-group">
+                    <h3 class="small-big-title">Sample EGAD! Object</h3>
+                    <div class="video-container">
+                        <div class="item">
+                            <h4 class="small-title">Baseline Coulomb Friction Constraint</h4>
+                            <video poster="" id="EGAD_CC" autoplay controls muted loop playsinline>
+                                <source src="videos/EGAD/EGAD_CC.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: PLA Model</h4>
+                            <video poster="" id="EGAD_pla" autoplay controls muted loop playsinline>
+                                <source src="videos/EGAD/EGAD_pla.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: Glass Model</h4>
+                            <video poster="" id="EGAD_glass" autoplay controls muted loop playsinline>
+                                <source src="videos/EGAD/EGAD_glass.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 1</h4>
+                            <video poster="" id="EGAD_A1" autoplay controls muted loop playsinline>
+                                <source src="videos/EGAD/EGAD_A1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 2</h4>
+                            <video poster="" id="EGAD_A2" autoplay controls muted loop playsinline>
+                                <source src="videos/EGAD/EGAD_A2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5th Group of 5 Videos -->
+                <div class="video-group">
+                    <h3 class="small-big-title">Coin</h3>
+                    <div class="video-container">
+                        <div class="item">
+                            <h4 class="small-title">Baseline Coulomb Friction Constraint</h4>
+                            <video poster="" id="coin_CC" autoplay controls muted loop playsinline>
+                                <source src="videos/coin/coin_CC.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: PLA Model</h4>
+                            <video poster="" id="coin_pla" autoplay controls muted loop playsinline>
+                                <source src="videos/coin/coin_pla.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: Glass Model</h4>
+                            <video poster="" id="coin_glass" autoplay controls muted loop playsinline>
+                                <source src="videos/coin/coin_glass.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 1</h4>
+                            <video poster="" id="coin_A1" autoplay controls muted loop playsinline>
+                                <source src="videos/coin/coin_A1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 2</h4>
+                            <video poster="" id="coin_A2" autoplay controls muted loop playsinline>
+                                <source src="videos/coin/coin_A2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6th Group of 5 Videos -->
+                <div class="video-group">
+                    <h3 class="small-big-title">Big Glass Container</h3>
+                    <div class="video-container">
+                        <div class="item">
+                            <h4 class="small-title">Baseline Coulomb Friction Constraint</h4>
+                            <video poster="" id="glass_big_CC" autoplay controls muted loop playsinline>
+                                <source src="videos/glass_big/glass_big_CC.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: PLA Model</h4>
+                            <video poster="" id="glass_big_pla" autoplay controls muted loop playsinline>
+                                <source src="videos/glass_big/glass_big_pla.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: Glass Model</h4>
+                            <video poster="" id="glass_big_glass" autoplay controls muted loop playsinline>
+                                <source src="videos/glass_big/glass_big_glass.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 1</h4>
+                            <video poster="" id="glass_small_A1" autoplay controls muted loop playsinline>
+                                <source src="videos/glass_big/glass_big_A1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <!-- <div class="item">
+                                            <h4 class="small-title">Ablation Study 2</h4>
+                                            <video poster="" id="glass_small_A2" autoplay controls muted loop playsinline>
+                                                <source src="videos/glass_small/glass_small_A2.mp4" type="video/mp4">
+                                            </video>
+                                        </div> -->
+                    </div>
+                </div>
+
+                <!-- 7th Group of 5 Videos -->
+                <div class="video-group">
+                    <h3 class="small-big-title">Disc</h3>
+                    <div class="video-container">
+                        <div class="item">
+                            <h4 class="small-title">Baseline Coulomb Friction Constraint</h4>
+                            <video poster="" id="disc_CC" autoplay controls muted loop playsinline>
+                                <source src="videos/disc/disc_CC.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: PLA Model</h4>
+                            <video poster="" id="disc_pla" autoplay controls muted loop playsinline>
+                                <source src="videos/disc/disc_pla.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: Glass Model</h4>
+                            <video poster="" id="disc_glass" autoplay controls muted loop playsinline>
+                                <source src="videos/disc/disc_glass.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 1</h4>
+                            <video poster="" id="disc_A1" autoplay controls muted loop playsinline>
+                                <source src="videos/disc/disc_A1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 2</h4>
+                            <video poster="" id="disc_A2" autoplay controls muted loop playsinline>
+                                <source src="videos/disc/disc_A2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
             <!-- Next Button -->
-            <button id="nextBtnMultiple" class="nav-btn">→</button>
+            <button id="nextBtn" class="nav-btn">→</button>
         </div>
+
     </div>
 </section>
 
+
 <style>
-    /* Your existing CSS styles */
     .video-scroll-container {
         display: flex;
         align-items: center;
@@ -255,8 +471,10 @@ Experimental results suggest the learned motion-based constraint reduces the dis
 
     .nav-btn {
         padding: 5px 10px;
+        /* Smaller button size */
         cursor: pointer;
         font-size: 1.5em;
+        /* Smaller font for arrows */
         background-color: #f0f0f0;
         border: none;
         border-radius: 5px;
@@ -265,14 +483,17 @@ Experimental results suggest the learned motion-based constraint reduces the dis
 
     .video-groups {
         flex: 1;
+        /* Allow it to take up the available space */
     }
 
     .video-group {
         display: none;
+        /* Hide all groups initially */
     }
 
     .video-group.active {
         display: block;
+        /* Show only the active group */
     }
 
     .video-container {
@@ -303,71 +524,38 @@ Experimental results suggest the learned motion-based constraint reduces the dis
 </style>
 
 <script>
-    // JavaScript to handle navigation for Single Objects
-    const videoGroupsSingle = document.querySelectorAll('#videoGroupsSingle .video-group');
-    let currentGroupSingle = 0;
+    // JavaScript to handle navigation
+    const videoGroups = document.querySelectorAll('.video-group');
+    let currentGroup = 0;
 
-    // Show the first group initially for Single Objects
-    videoGroupsSingle[currentGroupSingle].classList.add('active');
+    // Show the first group initially
+    videoGroups[currentGroup].classList.add('active');
 
-    // Function to update video groups for Single Objects
-    function updateGroupSingle(index) {
-        videoGroupsSingle[currentGroupSingle].classList.remove('active');
-        currentGroupSingle = index;
-        videoGroupsSingle[currentGroupSingle].classList.add('active');
+    // Function to update video groups
+    function updateGroup(index) {
+        videoGroups[currentGroup].classList.remove('active');
+        currentGroup = index;
+        videoGroups[currentGroup].classList.add('active');
     }
 
-    // Handle next button for Single Objects
-    document.getElementById('nextBtnSingle').addEventListener('click', () => {
-        if (currentGroupSingle < videoGroupsSingle.length - 1) {
-            updateGroupSingle(currentGroupSingle + 1);
+    // Handle next button with looping
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        if (currentGroup < videoGroups.length - 1) {
+            updateGroup(currentGroup + 1);
         } else {
-            updateGroupSingle(0);
+            updateGroup(0); // Loop to the first group
         }
     });
 
-    // Handle previous button for Single Objects
-    document.getElementById('prevBtnSingle').addEventListener('click', () => {
-        if (currentGroupSingle > 0) {
-            updateGroupSingle(currentGroupSingle - 1);
+    // Handle previous button with looping
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        if (currentGroup > 0) {
+            updateGroup(currentGroup - 1);
         } else {
-            updateGroupSingle(videoGroupsSingle.length - 1);
-        }
-    });
-
-    // JavaScript to handle navigation for Multiple Objects
-    const videoGroupsMultiple = document.querySelectorAll('#videoGroupsMultiple .video-group');
-    let currentGroupMultiple = 0;
-
-    // Show the first group initially for Multiple Objects
-    videoGroupsMultiple[currentGroupMultiple].classList.add('active');
-
-    // Function to update video groups for Multiple Objects
-    function updateGroupMultiple(index) {
-        videoGroupsMultiple[currentGroupMultiple].classList.remove('active');
-        currentGroupMultiple = index;
-        videoGroupsMultiple[currentGroupMultiple].classList.add('active');
-    }
-
-    // Handle next button for Multiple Objects
-    document.getElementById('nextBtnMultiple').addEventListener('click', () => {
-        if (currentGroupMultiple < videoGroupsMultiple.length - 1) {
-            updateGroupMultiple(currentGroupMultiple + 1);
-        } else {
-            updateGroupMultiple(0);
-        }
-    });
-
-    // Handle previous button for Multiple Objects
-    document.getElementById('prevBtnMultiple').addEventListener('click', () => {
-        if (currentGroupMultiple > 0) {
-            updateGroupMultiple(currentGroupMultiple - 1);
-        } else {
-            updateGroupMultiple(videoGroupsMultiple.length - 1);
+            updateGroup(videoGroups.length - 1); // Loop to the last group
         }
     });
 </script>
-
 
 
 
