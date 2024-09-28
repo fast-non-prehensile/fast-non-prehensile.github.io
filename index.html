@@ -148,7 +148,6 @@
 
 <section class="section">
     <div class="container is-max-desktop">
-        <!-- Abstract. -->
         <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
                 <h2 class="title is-3">Abstract</h2>
@@ -171,47 +170,10 @@
                 </div>
             </div>
         </div>
-        <!--/ Abstract. -->
-
-
-<!-- <section class="hero is-light is-small">
-    <div class="hero-body">
-        <div class="container is-max-desktop">
-            <div id="results-carousel" class="carousel results-carousel">
-                <div class="item item-scene1">
-                    <video poster="" id="scene1" autoplay controls muted loop playsinline width="400" height="400">
-                        <source src="content/videos/wine_grasp.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item item-scene2">
-                    <video poster="" id="scene2" autoplay controls muted loop playsinline width="400" height="400">
-                        <source src="content/videos/tape_grasp.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item item-scene3">
-                    <video poster="" id="scene3" autoplay controls muted loop playsinline width="400" height="400">
-                        <source src="content/videos/shot_grasp.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item item-scene4">
-                    <video poster="" id="scene4" autoplay controls muted loop playsinline width="400" height="400">
-                        <source src="content/videos/wine_grasp.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item item-scene5">
-                    <video poster="" id="scene5" autoplay controls muted loop playsinline width="400" height="400">
-                        <source src="content/videos/tape_grasp.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item item-scene6">
-                    <video poster="" id="scene6" autoplay controls muted loop playsinline width="400" height="400">
-                        <source src="content/videos/shot_grasp.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </div>
     </div>
-</section> -->
+</section>
+    
+
             
 <section class="section">
     <div class="container is-max-desktop">
@@ -222,5 +184,68 @@
                 allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 </section>
+
+
+<section class="hero is-light is-small">
+    <div class="hero-body">
+        <div class="container">
+            <div id="results-carousel" class="carousel results-carousel">
+                <div class="video-container">
+                    <!-- Video items - repeat this block for 60 videos -->
+                    <div class="item item-steve">
+                        <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+                            <source src="videos/cube/cube_CC.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="item item-chair-tp">
+                        <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+                            <source src="videos/cube/cube_pla.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="item item-shiba">
+                        <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+                            <source src="videos/cube/cube_glass.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="item item-fullbody">
+                        <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+                            <source src="videos/cube/cube_A1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="item item-blueshirt">
+                        <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+                            <source src="videos/cube/cube_A2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <!-- Repeat similar blocks for 60 videos -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .video-container {
+        display: flex;
+        overflow-x: scroll;
+        /* Enable horizontal scrolling */
+        gap: 10px;
+        /* Space between videos */
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .item {
+        flex: 0 0 20%;
+        /* Show 5 videos at a time */
+    }
+
+    video {
+        width: 100%;
+        /* Adjust video to fit within its container */
+        height: auto;
+    }
+</style>
+
 
 </html>
