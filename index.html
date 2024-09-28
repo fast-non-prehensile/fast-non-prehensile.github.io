@@ -148,8 +148,8 @@
 
 <section class="section">
     <div class="container is-max-desktop">
-        <!-- <div class="columns is-centered has-text-centered"> -->
-            <div class="column is-four-fifths">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full">
                 <h2 class="title is-3">Abstract</h2>
                 <div class="content has-text-justified">
                     <p>
@@ -165,7 +165,7 @@ Experimental results suggest the learned motion-based constraint reduces the dis
                     </p>
                 </div>
             </div>
-        <!-- </div> -->
+        </div>
     </div>
 </section>
     
@@ -185,81 +185,91 @@ Experimental results suggest the learned motion-based constraint reduces the dis
 <section class="hero is-light is-small">
     <div class="hero-body">
         <h2 class="title is-3">Experiments</h2>
-        <div class="container"> 
+        <div class="container">
             <div id="results-carousel" class="carousel results-carousel">
-                <h3 class="small-big-title">Cube</h3>
-                <div class="video-container">
-                    <div class="item">
-                        <h4 class="small-title">Baseline Coulomb Friction Constraint</h4>
-                        <video poster="" id="cube_CC" autoplay controls muted loop playsinline height="100%">
-                            <source src="videos/cube/cube_CC.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item">
-                        <h4 class="small-title">Learned Motion-Based Constraint: PLA Model</h4>
-                        <video poster="" id="cube_pla" autoplay controls muted loop playsinline height="100%">
-                            <source src="videos/cube/cube_pla.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item">
-                        <h4 class="small-title">Learned Motion-Based Constraint: Glass Model</h4>
-                        <video poster="" id="cube_glass" autoplay controls muted loop playsinline height="100%">
-                            <source src="videos/cube/cube_glass.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item">
-                        <h4 class="small-title">Ablation Study 1</h4>
-                        <video poster="" id="cube_A1" autoplay controls muted loop playsinline height="100%">
-                            <source src="videos/cube/cube_A1.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item">
-                        <h4 class="small-title">Ablation Study 2</h4>
-                        <video poster="" id="cube_A2" autoplay controls muted loop playsinline height="100%">
-                            <source src="videos/cube/cube_A2.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-            
-
-                <h3 class="small-big-title">Gusset</h3> <!-- Big title for the group of 5 videos -->
-                <div id="results-carousel" class="carousel results-carousel">
+                <!-- Group 1 -->
+                <div class="carousel-item">
+                    <h3 class="big-title">Cube</h3>
                     <div class="video-container">
-                        <!-- Video items - repeat this block for 35 videos -->
                         <div class="item">
                             <h4 class="small-title">Baseline Coulomb Friction Constraint</h4>
-                            <video poster="" id="gusset_CC" autoplay controls muted loop playsinline height="100%">
+                            <video poster="" id="cube_CC" autoplay controls muted loop playsinline>
+                                <source src="videos/cube/cube_CC.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: PLA Model</h4>
+                            <video poster="" id="cube_pla" autoplay controls muted loop playsinline>
+                                <source src="videos/cube/cube_pla.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: Glass Model</h4>
+                            <video poster="" id="cube_glass" autoplay controls muted loop playsinline>
+                                <source src="videos/cube/cube_glass.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 1</h4>
+                            <video poster="" id="cube_A1" autoplay controls muted loop playsinline>
+                                <source src="videos/cube/cube_A1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 2</h4>
+                            <video poster="" id="cube_A2" autoplay controls muted loop playsinline>
+                                <source src="videos/cube/cube_A2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 2 -->
+                <div class="carousel-item">
+                    <h3 class="big-title">Gusset</h3>
+                    <div class="video-container">
+                        <div class="item">
+                            <h4 class="small-title">Baseline Coulomb Friction Constraint</h4>
+                            <video poster="" id="gusset_CC" autoplay controls muted loop playsinline>
                                 <source src="videos/gusset/gusset_CC.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="item">
                             <h4 class="small-title">Learned Motion-Based Constraint: PLA Model</h4>
-                            <video poster="" id="gusset_pla" autoplay controls muted loop playsinline height="100%">
+                            <video poster="" id="gusset_pla" autoplay controls muted loop playsinline>
                                 <source src="videos/gusset/gusset_pla.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="item">
                             <h4 class="small-title">Learned Motion-Based Constraint: Glass Model</h4>
-                            <video poster="" id="gusset_glass" autoplay controls muted loop playsinline height="100%">
+                            <video poster="" id="gusset_glass" autoplay controls muted loop playsinline>
                                 <source src="videos/gusset/gusset_glass.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="item">
                             <h4 class="small-title">Ablation Study 1</h4>
-                            <video poster="" id="gusset_A1" autoplay controls muted loop playsinline height="100%">
+                            <video poster="" id="gusset_A1" autoplay controls muted loop playsinline>
                                 <source src="videos/gusset/gusset_A1.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="item">
                             <h4 class="small-title">Ablation Study 2</h4>
-                            <video poster="" id="gusset_A2" autoplay controls muted loop playsinline height="100%">
+                            <video poster="" id="gusset_A2" autoplay controls muted loop playsinline>
                                 <source src="videos/gusset/gusset_A2.mp4" type="video/mp4">
                             </video>
                         </div>
                     </div>
                 </div>
-            </div>  
 
+                <!-- Add more groups as needed -->
+            </div>
+
+            <!-- Carousel Navigation Buttons -->
+            <div class="carousel-nav">
+                <button class="nav-button" onclick="changeSlide(0)">●</button>
+                <button class="nav-button" onclick="changeSlide(1)">●</button>
+                <!-- Add more buttons as needed -->
+            </div>
         </div>
     </div>
 </section>
@@ -267,19 +277,14 @@ Experimental results suggest the learned motion-based constraint reduces the dis
 <style>
     .video-container {
         display: flex;
-        overflow-x: scroll;
-        /* Enable horizontal scrolling */
+        justify-content: space-around;
         gap: 10px;
-        /* Space between videos */
         padding: 10px;
-        max-width: 100%;
     }
 
     .item {
         flex: 0 0 20%;
-        /* Show 5 videos at a time */
         text-align: center;
-        /* Center align titles */
     }
 
     .big-title {
@@ -295,10 +300,52 @@ Experimental results suggest the learned motion-based constraint reduces the dis
 
     video {
         width: 100%;
-        /* Adjust video to fit within its container */
         height: auto;
     }
+
+    .carousel-item {
+        display: none;
+    }
+
+    .carousel-item.active {
+        display: block;
+    }
+
+    .carousel-nav {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .nav-button {
+        cursor: pointer;
+        background-color: #bbb;
+        border: none;
+        border-radius: 50%;
+        padding: 5px;
+        margin: 0 5px;
+    }
+
+    .nav-button:hover {
+        background-color: #888;
+    }
 </style>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-item');
+
+    function changeSlide(index) {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = index;
+        slides[currentSlide].classList.add('active');
+    }
+
+    // Initialize the first slide as active
+    document.addEventListener('DOMContentLoaded', () => {
+        slides[0].classList.add('active');
+    });
+</script>
+
 
 
 
