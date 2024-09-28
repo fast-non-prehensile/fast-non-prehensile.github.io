@@ -1,1 +1,146 @@
-<h1>FAST: Friction-Aware non-Sliding Transport with Learned Motion-Based Non-Prehensile Constraints</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+    <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FAST: Friction-Aware non-Sliding Transport with Learned Motion-Based Constraints</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-PYVRSFMDRL');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/favicon.svg">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+                <a class="navbar-item" href="https://keunhong.com">
+                    <span class="icon">
+                        <i class="fas fa-home"></i>
+                    </span>
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        More Research
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="https://hypernerf.github.io">
+                            HyperNeRF
+                        </a>
+                        <a class="navbar-item" href="https://nerfies.github.io">
+                            Nerfies
+                        </a>
+                        <a class="navbar-item" href="https://latentfusion.github.io">
+                            LatentFusion
+                        </a>
+                        <a class="navbar-item" href="https://photoshape.github.io">
+                            PhotoShape
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a href="https://yueminm.github.io/">Yuemin Mao</a><sup>1</sup>,</span>
+                            <span class="author-block">
+                                <a href="https://www.bart-ai.com/">Bardienus P. Duisterhof</a><sup>1</sup>,</span>
+                            <span class="author-block">
+                                <a href="https://markmlee.github.io/">Moonyoung Lee</a><sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://ichnow.ski/">Jeffrey Ichnowski</a><sup>1</sup>,
+                            </span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>1</sup>Robotics Institute, Carnegie Mellon University</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            Object transport tasks are fundamental in robotic automation, emphasizing the importance of efficient and secure methods
+                            for moving objects. Non-prehensile transport has the advantage of moving multiple objects simultaneously and handling
+                            objects that are difficult for rigid grasps, which can significantly improve transport efficiency. However, fast
+                            non-prehensile transport requires carefully-designed constraints to balance the unilateral forces on the objects to
+                            guarantee safety. We propose FAST: friction-aware non-sliding transport with learned motion-based non-prehensile
+                            constraints, aiming to transport objects on a tray at high speed with a robotic manipulator, preventing objects from
+                            falling or sliding. We first formulate a baseline Coulomb friction constraint with a measured static friction
+                            coefficient, which does not account for all forces in reality and leads to object sliding. We then propose learning a
+                            motion-based constraint to adjust the effective friction during optimization-based motion planning. To train a model for
+                            this constraint, we employ vibro-tactile sensing to identify the threshold velocity and acceleration that trigger
+                            sliding. We incorporate the motion-based constraint into an optimization-based motion planning framework to generate
+                            motions for a UR5e robot to transport various objects. Experimental results suggest the learned motion-based constraint
+                            reduces the displacement compared to the baseline Coulomb friction constraint up to 86.0%.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--/ Abstract. -->
+
+
+
+</html>
