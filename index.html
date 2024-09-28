@@ -282,12 +282,12 @@ Experimental results suggest the learned motion-based constraint reduces the dis
     }
 
     .nav-btn {
-        padding: 10px 20px;
+        padding: 5px 10px;
+        /* Smaller button size */
         cursor: pointer;
-        font-size: 2em;
-        /* Larger font for arrows */
+        font-size: 1.5em;
+        /* Smaller font for arrows */
         background-color: #f0f0f0;
-        /* Light gray background */
         border: none;
         border-radius: 5px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -325,7 +325,7 @@ Experimental results suggest the learned motion-based constraint reduces the dis
     }
 
     .small-title {
-        font-size: 1em;
+        font-size: 0.8em;
         margin: 5px 0;
     }
 
@@ -350,20 +350,25 @@ Experimental results suggest the learned motion-based constraint reduces the dis
         videoGroups[currentGroup].classList.add('active');
     }
 
-    // Handle next button
+    // Handle next button with looping
     document.getElementById('nextBtn').addEventListener('click', () => {
         if (currentGroup < videoGroups.length - 1) {
             updateGroup(currentGroup + 1);
+        } else {
+            updateGroup(0); // Loop to the first group
         }
     });
 
-    // Handle previous button
+    // Handle previous button with looping
     document.getElementById('prevBtn').addEventListener('click', () => {
         if (currentGroup > 0) {
             updateGroup(currentGroup - 1);
+        } else {
+            updateGroup(videoGroups.length - 1); // Loop to the last group
         }
     });
 </script>
+
 
 
 
