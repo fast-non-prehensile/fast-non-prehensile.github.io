@@ -194,12 +194,20 @@ Experimental results suggest the learned motion-based constraint reduces the dis
 
             <!-- Video Groups Container for Single Objects -->
             <div id="videoGroupsSingle" class="video-groups">
-                <!-- Video groups go here (same structure as your existing groups) -->
-                <!-- Example: -->
-                <div class="video-group">
-                    <!-- Content for Cube experiment -->
+                <!-- Example: 1st Video Group for Single Objects -->
+                <div class="video-group active">
+                    <h3 class="small-big-title">Cube</h3>
+                    <div class="video-container">
+                        <div class="item">
+                            <h4 class="small-title">Baseline Coulomb Friction Constraint</h4>
+                            <video poster="" id="cube_CC" autoplay controls muted loop playsinline>
+                                <source src="videos/cube/cube_CC.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <!-- Additional videos go here -->
+                    </div>
                 </div>
-                <!-- More groups... -->
+                <!-- More video groups for single objects... -->
             </div>
 
             <!-- Next Button -->
@@ -214,12 +222,20 @@ Experimental results suggest the learned motion-based constraint reduces the dis
 
             <!-- Video Groups Container for Multiple Objects -->
             <div id="videoGroupsMultiple" class="video-groups">
-                <!-- Video groups go here (same structure as your existing groups) -->
-                <!-- Example: -->
-                <div class="video-group">
-                    <!-- Content for 3 Gussets experiment -->
+                <!-- Example: 1st Video Group for Multiple Objects -->
+                <div class="video-group active">
+                    <h3 class="small-big-title">3 Gussets</h3>
+                    <div class="video-container">
+                        <div class="item">
+                            <h4 class="small-title">Baseline Coulomb Friction Constraint</h4>
+                            <video poster="" id="gusset3_CC" autoplay controls muted loop playsinline>
+                                <source src="videos/gusset3/gusset3_CC.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <!-- Additional videos go here -->
+                    </div>
                 </div>
-                <!-- More groups... -->
+                <!-- More video groups for multiple objects... -->
             </div>
 
             <!-- Next Button -->
@@ -351,6 +367,7 @@ Experimental results suggest the learned motion-based constraint reduces the dis
         }
     });
 </script>
+
 
 
 
