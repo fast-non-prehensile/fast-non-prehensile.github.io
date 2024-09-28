@@ -153,19 +153,15 @@
                 <h2 class="title is-3">Abstract</h2>
                 <div class="content has-text-justified">
                     <p>
-                        Object transport tasks are fundamental in robotic automation, emphasizing the importance of efficient and secure methods
-                        for moving objects. Non-prehensile transport has the advantage of moving multiple objects simultaneously and handling
-                        objects that are difficult for rigid grasps, which can significantly improve transport efficiency. However, fast
-                        non-prehensile transport requires carefully-designed constraints to balance the unilateral forces on the objects to
-                        guarantee safety. We propose FAST: friction-aware non-sliding transport with learned motion-based non-prehensile
-                        constraints, aiming to transport objects on a tray at high speed with a robotic manipulator, preventing objects from
-                        falling or sliding. We first formulate a baseline Coulomb friction constraint with a measured static friction
-                        coefficient, which does not account for all forces in reality and leads to object sliding. We then propose learning a
-                        motion-based constraint to adjust the effective friction during optimization-based motion planning. To train a model for
-                        this constraint, we employ vibro-tactile sensing to identify the threshold velocity and acceleration that trigger
-                        sliding. We incorporate the motion-based constraint into an optimization-based motion planning framework to generate
-                        motions for a UR5e robot to transport various objects. Experimental results suggest the learned motion-based constraint
-                        reduces the displacement compared to the baseline Coulomb friction constraint up to 86.0%.
+Object transport tasks are fundamental in robotic automation, emphasizing the importance of efficient and secure methods for moving objects. 
+Non-prehensile transport has the advantage of moving multiple objects simultaneously and handling objects that are difficult for rigid grasps, which can significantly improve transport efficiency. 
+However, fast non-prehensile transport requires carefully-designed constraints to balance the unilateral forces on the objects to guarantee safety. 
+We propose FAST: friction-aware non-sliding transport with learned motion-based non-prehensile constraints, aiming to transport objects on a tray at high speed with a robotic manipulator, preventing objects from falling or sliding. 
+We first formulate a baseline Coulomb friction constraint with a measured static friction coefficient, which does not account for all forces in reality and leads to object sliding. 
+We then propose learning a motion-based constraint to adjust the effective friction during optimization-based motion planning. 
+To train a model for this constraint, we employ vibro-tactile sensing to identify the threshold velocity and acceleration that trigger sliding. 
+We incorporate the motion-based constraint into an optimization-based motion planning framework to generate motions for a UR5e robot to transport various objects. 
+Experimental results suggest the learned motion-based constraint reduces the displacement compared to the baseline Coulomb friction constraint up to 86.0%.
                     </p>
                 </div>
             </div>
