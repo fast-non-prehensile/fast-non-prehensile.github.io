@@ -466,7 +466,7 @@ Experimental results suggest the learned motion-based constraint reduces the dis
 <section class="hero is-light is-small">
     <div class="hero-body">
         <!-- <h2 class="title is-3">Experiments</h2> -->
-        <h2 class="title is-5">7 Experiments with Single Objects</h2>
+        <h2 class="title is-5">3 Experiments with Multiple Objects</h2>
         <div class="video-scroll-container">
             <!-- Previous Button -->
             <button id="prevBtn2" class="nav-btn">←</button>
@@ -687,36 +687,36 @@ Experimental results suggest the learned motion-based constraint reduces the dis
     });
 
     // JavaScript to handle navigation
-        const videoGroups2 = document.querySelectorAll('.video-group2');
-        let currentGroup2 = 0;
+    const videoGroups2 = document.querySelectorAll('.video-group2');
+    let currentGroup2 = 0;
 
-        // Show the first group initially
-        videoGroup2[currentGroup2].classList.add('active');
+    // Show the first group initially
+    videoGroups2[currentGroup2].classList.add('active');
 
-        // Function to update video groups
-        function updateGroup2(index) {
-            videoGroups2[currentGroup2].classList.remove('active');
-            currentGroup2 = index;
-            videoGroups2[currentGroup2].classList.add('active');
+    // Function to update video groups
+    function updateGroup2(index) {
+        videoGroups2[currentGroup2].classList.remove('active');
+        currentGroup2 = index;
+        videoGroups2[currentGroup2].classList.add('active');
+    }
+
+    // Handle next button with looping
+    document.getElementById('nextBtn2').addEventListener('click', () => {
+        if (currentGroup2 < videoGroups2.length - 1) {
+            updateGroup2(currentGroup2 + 1);
+        } else {
+            updateGroup2(0); // Loop to the first group
         }
+    });
 
-        // Handle next button with looping
-        document.getElementById('nextBtn2').addEventListener('click', () => {
-            if (currentGroup2 < videoGroups2.length - 1) {
-                updateGroup2(currentGroup2 + 1);
-            } else {
-                updateGroup2(0); // Loop to the first group
-            }
-        });
-
-        // Handle previous button with looping
-        document.getElementById('prevBtn2').addEventListener('click', () => {
-            if (currentGroup2 > 0) {
-                updateGroup2(currentGroup2 - 1);
-            } else {
-                updateGroup2(videoGroups2.length - 1); // Loop to the last group
-            }
-        });
+    // Handle previous button with looping
+    document.getElementById('prevBtn2').addEventListener('click', () => {
+        if (currentGroup2 > 0) {
+            updateGroup2(currentGroup2 - 1);
+        } else {
+            updateGroup2(videoGroups2.length - 1); // Loop to the last group
+        }
+    });
 </script>
 
 
