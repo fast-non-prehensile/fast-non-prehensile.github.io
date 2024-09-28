@@ -86,6 +86,57 @@
                     <div class="is-size-5 publication-authors">
                         <span class="author-block"><sup>1</sup>Robotics Institute, Carnegie Mellon University</span>
                     </div>
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- <span class="link-block">
+                                <a href="content/paper.pdf" class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </span>
+                                    <span>Paper</span>
+                                </a>
+                            </span> -->
+
+                            <span class="link-block">
+                                <a href="https://www.youtube.com/watch?v=0JNYHeCG8wE&source_ve_path=MjM4NTE&feature=emb_title"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fab fa-youtube"></i>
+                                    </span>
+                                    <span>Video</span>
+                                </a>
+                            </span>
+
+                            <!-- <span class="link-block">
+                                <a href="https://github.com/momentum-robotics-lab/residual-nerf"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fab fa-github"></i>
+                                    </span>
+                                    <span>Code</span>
+                                </a>
+                            </span> -->
+
+                            <!-- <span class="link-block">
+                                <a href="https://arxiv.org/abs/2405.06181" class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="ai ai-arxiv"></i>
+                                    </span>
+                                    <span>arXiv</span>
+                                </a>
+                            </span> -->
+
+                            <!-- <span class="link-block">
+                                <a href="https://drive.google.com/drive/folders/15r_mLt8MD5-AuYfoWCLy72hD27-tHA2N?usp=sharing"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="far fa-images"></i>
+                                    </span>
+                                    <span>Data</span>
+                                </a>
+                            </span> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -95,33 +146,81 @@
 
 
 
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- Abstract. -->
-            <div class="columns is-centered has-text-centered">
-                <div class="column is-four-fifths">
-                    <h2 class="title is-3">Abstract</h2>
-                    <div class="content has-text-justified">
-                        <p>
-                            Object transport tasks are fundamental in robotic automation, emphasizing the importance of efficient and secure methods
-                            for moving objects. Non-prehensile transport has the advantage of moving multiple objects simultaneously and handling
-                            objects that are difficult for rigid grasps, which can significantly improve transport efficiency. However, fast
-                            non-prehensile transport requires carefully-designed constraints to balance the unilateral forces on the objects to
-                            guarantee safety. We propose FAST: friction-aware non-sliding transport with learned motion-based non-prehensile
-                            constraints, aiming to transport objects on a tray at high speed with a robotic manipulator, preventing objects from
-                            falling or sliding. We first formulate a baseline Coulomb friction constraint with a measured static friction
-                            coefficient, which does not account for all forces in reality and leads to object sliding. We then propose learning a
-                            motion-based constraint to adjust the effective friction during optimization-based motion planning. To train a model for
-                            this constraint, we employ vibro-tactile sensing to identify the threshold velocity and acceleration that trigger
-                            sliding. We incorporate the motion-based constraint into an optimization-based motion planning framework to generate
-                            motions for a UR5e robot to transport various objects. Experimental results suggest the learned motion-based constraint
-                            reduces the displacement compared to the baseline Coulomb friction constraint up to 86.0%.
-                        </p>
-                    </div>
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        Object transport tasks are fundamental in robotic automation, emphasizing the importance of efficient and secure methods
+                        for moving objects. Non-prehensile transport has the advantage of moving multiple objects simultaneously and handling
+                        objects that are difficult for rigid grasps, which can significantly improve transport efficiency. However, fast
+                        non-prehensile transport requires carefully-designed constraints to balance the unilateral forces on the objects to
+                        guarantee safety. We propose FAST: friction-aware non-sliding transport with learned motion-based non-prehensile
+                        constraints, aiming to transport objects on a tray at high speed with a robotic manipulator, preventing objects from
+                        falling or sliding. We first formulate a baseline Coulomb friction constraint with a measured static friction
+                        coefficient, which does not account for all forces in reality and leads to object sliding. We then propose learning a
+                        motion-based constraint to adjust the effective friction during optimization-based motion planning. To train a model for
+                        this constraint, we employ vibro-tactile sensing to identify the threshold velocity and acceleration that trigger
+                        sliding. We incorporate the motion-based constraint into an optimization-based motion planning framework to generate
+                        motions for a UR5e robot to transport various objects. Experimental results suggest the learned motion-based constraint
+                        reduces the displacement compared to the baseline Coulomb friction constraint up to 86.0%.
+                    </p>
                 </div>
             </div>
-            <!--/ Abstract. -->
+        </div>
+        <!--/ Abstract. -->
 
 
+<!-- <section class="hero is-light is-small">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div id="results-carousel" class="carousel results-carousel">
+                <div class="item item-scene1">
+                    <video poster="" id="scene1" autoplay controls muted loop playsinline width="400" height="400">
+                        <source src="content/videos/wine_grasp.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="item item-scene2">
+                    <video poster="" id="scene2" autoplay controls muted loop playsinline width="400" height="400">
+                        <source src="content/videos/tape_grasp.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="item item-scene3">
+                    <video poster="" id="scene3" autoplay controls muted loop playsinline width="400" height="400">
+                        <source src="content/videos/shot_grasp.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="item item-scene4">
+                    <video poster="" id="scene4" autoplay controls muted loop playsinline width="400" height="400">
+                        <source src="content/videos/wine_grasp.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="item item-scene5">
+                    <video poster="" id="scene5" autoplay controls muted loop playsinline width="400" height="400">
+                        <source src="content/videos/tape_grasp.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="item item-scene6">
+                    <video poster="" id="scene6" autoplay controls muted loop playsinline width="400" height="400">
+                        <source src="content/videos/shot_grasp.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+            
+<section class="section">
+    <div class="container is-max-desktop">
+
+        <h2 class="title is-3">Video </h2>
+        <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/0JNYHeCG8wE?rel=0&amp;showinfo=0" frameborder="0"
+                allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+</section>
 
 </html>
