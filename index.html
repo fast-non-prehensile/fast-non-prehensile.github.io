@@ -190,119 +190,89 @@
     <div class="hero-body">
         <h2 class="title is-3">Experiments</h2>
         <div class="container">
-            <h3 class="small-big-title">Cube</h3> <!-- Big title for the group of 5 videos -->
-            <div id="results-carousel" class="carousel results-carousel">
-                <div class="video-container">
-                    <!-- Video items - repeat this block for 35 videos -->
-                    <div class="item">
-                        <h4 class="small-title">Baseline Coulomb Friction Constraint</h4>
-                        <video poster="" id="cube_CC" autoplay controls muted loop playsinline height="100%">
-                            <source src="videos/cube/cube_CC.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item">
-                        <h4 class="small-title">Learned Motion-Based Constraint: PLA Model</h4>
-                        <video poster="" id="cube_pla" autoplay controls muted loop playsinline height="100%">
-                            <source src="videos/cube/cube_pla.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item">
-                        <h4 class="small-title">Learned Motion-Based Constraint: Glass Model</h4>
-                        <video poster="" id="cube_glass" autoplay controls muted loop playsinline height="100%">
-                            <source src="videos/cube/cube_glass.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item">
-                        <h4 class="small-title">Ablation Study 1</h4>
-                        <video poster="" id="cube_A1" autoplay controls muted loop playsinline height="100%">
-                            <source src="videos/cube/cube_A1.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item">
-                        <h4 class="small-title">Ablation Study 2</h4>
-                        <video poster="" id="cube_A2" autoplay controls muted loop playsinline height="100%">
-                            <source src="videos/cube/cube_A2.mp4" type="video/mp4">
-                        </video>
+            <!-- Carousel Container -->
+            <div id="video-carousel" class="carousel">
+
+                <!-- Group 1: 5 Videos -->
+                <div class="group-container">
+                    <h3 class="small-big-title">Cube</h3>
+                    <div class="video-container">
+                        <div class="item">
+                            <h4 class="small-title">Baseline Coulomb Friction Model</h4>
+                            <video poster="" id="cube_CC" autoplay controls muted loop playsinline height="100%">
+                                <source src="videos/cube/cube_CC.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: PLA Model</h4>
+                            <video poster="" id="cube_pla" autoplay controls muted loop playsinline height="100%">
+                                <source src="videos/cube/cube_pla.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: Glass Model</h4>
+                            <video poster="" id="cube_glass" autoplay controls muted loop playsinline height="100%">
+                                <source src="videos/cube/cube_glass.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 1</h4>
+                            <video poster="" id="cube_A1" autoplay controls muted loop playsinline height="100%">
+                                <source src="videos/cube/cube_A1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 2</h4>
+                            <video poster="" id="cube_A2" autoplay controls muted loop playsinline height="100%">
+                                <source src="videos/cube/cube_A2.mp4" type="video/mp4">
+                            </video>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <h3 class="small-big-title">Gusset</h3> <!-- Big title for the group of 5 videos -->
-            <div id="results-carousel" class="carousel results-carousel">
-                <div class="video-container">
-                    <!-- Video items - repeat this block for 35 videos -->
-                    <div class="item">
-                        <h4 class="small-title">Baseline Coulomb Friction Constraint</h4>
-                        <video poster="" id="gusset_CC" autoplay controls muted loop playsinline height="100%">
-                            <source src="videos/gusset/gusset_CC.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item">
-                        <h4 class="small-title">Learned Motion-Based Constraint: PLA Model</h4>
-                        <video poster="" id="gusset_pla" autoplay controls muted loop playsinline height="100%">
-                            <source src="videos/gusset/gusset_pla.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item">
-                        <h4 class="small-title">Learned Motion-Based Constraint: Glass Model</h4>
-                        <video poster="" id="gusset_glass" autoplay controls muted loop playsinline height="100%">
-                            <source src="videos/gusset/gusset_glass.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item">
-                        <h4 class="small-title">Ablation Study 1</h4>
-                        <video poster="" id="gusset_A1" autoplay controls muted loop playsinline height="100%">
-                            <source src="videos/gusset/gusset_A1.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item">
-                        <h4 class="small-title">Ablation Study 2</h4>
-                        <video poster="" id="gusset_A2" autoplay controls muted loop playsinline height="100%">
-                            <source src="videos/gusset/gusset_A2.mp4" type="video/mp4">
-                        </video>
+                <!-- Group 2: Next 5 Videos -->
+                <div class="group-container">
+                    <h3 class="small-big-title">Gusset</h3>
+                    <div class="video-container">
+                        <div class="item">
+                            <h4 class="small-title">Baseline Coulomb Friction Model</h4>
+                            <video poster="" id="gusset_CC" autoplay controls muted loop playsinline height="100%">
+                                <source src="videos/gusset/gusset_CC.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: PLA Model</h4>
+                            <video poster="" id="gusset_pla" autoplay controls muted loop playsinline height="100%">
+                                <source src="videos/gusset/gusset_pla.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Learned Motion-Based Constraint: Glass Model</h4>
+                            <video poster="" id="gusset_glass" autoplay controls muted loop playsinline height="100%">
+                                <source src="videos/gusset/gusset_glass.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 1</h4>
+                            <video poster="" id="gusset_A1" autoplay controls muted loop playsinline height="100%">
+                                <source src="videos/gusset/gusset_A1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item">
+                            <h4 class="small-title">Ablation Study 2</h4>
+                            <video poster="" id="gusset_A2" autoplay controls muted loop playsinline height="100%">
+                                <source src="videos/gusset/gusset_A2.mp4" type="video/mp4">
+                            </video>
+                        </div>
                     </div>
                 </div>
-            </div>
 
+                <!-- Repeat similar blocks for the remaining groups of 5 videos -->
+
+            </div>
         </div>
     </div>
 </section>
-
-<style>
-    .video-container {
-        display: flex;
-        overflow-x: scroll;
-        /* Enable horizontal scrolling */
-        gap: 10px;
-        /* Space between videos */
-        padding: 10px;
-        max-width: 100%;
-    }
-
-    .item {
-        flex: 0 0 20%;
-        /* Show 5 videos at a time */
-        text-align: center;
-        /* Center align titles */
-    }
-
-    .big-title {
-        font-size: 2em;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .small-title {
-        font-size: 1em;
-        margin: 5px 0;
-    }
-
-    video {
-        width: 100%;
-        /* Adjust video to fit within its container */
-        height: auto;
-    }
-</style>
 
 
 
