@@ -750,12 +750,16 @@ Experimental results suggest the learned motion-based constraint reduces the dis
 
     .video-container {
         display: flex;
-        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: flex-end; /* Align items to the bottom */
         gap: 10px;
     }
 
     .item {
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
     }
 
     .small-big-title {
