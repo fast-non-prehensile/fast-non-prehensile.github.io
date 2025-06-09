@@ -905,39 +905,61 @@
     </div>
 </footer>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const videos = Array.from(document.querySelectorAll('video'));
-    let readyCount = 0, started = false, total = videos.length;
+  <!-- SYNC ALL VIDEOS TOGETHER (master = longest video) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const vids = Array.from(document.querySelectorAll("video"));
+      if (!vids.length) return;
 
-    // initially pause & reset everyone
-    videos.forEach(v => { v.pause(); v.currentTime = 0; });
+      // wait until we know every video's duration
+      let metaCount = 0;
+      vids.forEach(v => v.addEventListener("loadedmetadata", () => {
+        if (++metaCount === vids.length) initSync();
+      }));
 
-    // when each video can fully play through
-    videos.forEach(v => {
-    v.addEventListener('canplaythrough', () => {
-        readyCount++;
-        if (readyCount === total) {
-        // all ready → start together
-        videos.forEach(x => { x.currentTime = 0; x.play(); });
-        started = true;
-        }
+      function initSync() {
+        // disable native looping
+        vids.forEach(v => {
+          v.loop = false;
+          v.removeAttribute("loop");
+        });
+
+        // sort so longest video is first (the master)
+        vids.sort((a, b) => b.duration - a.duration);
+        const [master, ...others] = vids;
+
+        // once all can play through, start them together
+        let ready = 0;
+        vids.forEach(v => v.addEventListener("canplaythrough", () => {
+          if (++ready === vids.length) {
+            master.currentTime = 0;
+            master.play();
+            others.forEach(o => {
+              o.currentTime = 0;
+              o.play();
+            });
+          }
+        }));
+
+        // on each master timeupdate, warp others into sync
+        master.addEventListener("timeupdate", () => {
+          const t = master.currentTime;
+          others.forEach(o => {
+            const target = t % o.duration;
+            // only seek if out of sync by > 50ms
+            if (Math.abs(o.currentTime - target) > 0.05) {
+              o.currentTime = target;
+            }
+          });
+        });
+
+        // manual loop for master
+        master.addEventListener("ended", () => {
+          master.currentTime = 0;
+          master.play();
+        });
+      }
     });
-
-    // on any end, restart everyone together
-    v.addEventListener('ended', () => {
-        if (!started) return;
-        videos.forEach(x => { x.currentTime = 0; x.play(); });
-    });
-    });
-});
-</script>
-
-</body> 
-
-
-
-
-
-
+  </script>
+</body>
 </html>
