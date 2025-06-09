@@ -229,6 +229,7 @@
                 <!-- 1st Group of 5 Videos -->
                 <div class="video-group">
                     <h3 class="small-big-title">Cube (1x original speed)</h3>
+                    <button class="play-all-btn" onclick="playAllInGroup('group1')">▶ Play All</button>
                     <div class="video-container">
                         <div class="item">
                             <h4 class="small-title">Standard Coulomb Friction Model</h4>
@@ -266,6 +267,7 @@
                 <!-- 2nd Group of 5 Videos -->
                 <div class="video-group">
                     <h3 class="small-big-title">Gusset (1x original speed)</h3>
+                    <button class="play-all-btn" onclick="playAllInGroup('group1')">▶ Play All</button>
                     <div class="video-container">
                         <div class="item">
                             <h4 class="small-title">Standard Coulomb Friction Model</h4>
@@ -303,6 +305,7 @@
                 <!-- 3rd Group of 5 Videos -->
                 <div class="video-group">
                     <h3 class="small-big-title">Small Glass Container (1x original speed)</h3>
+                    <button class="play-all-btn" onclick="playAllInGroup('group1')">▶ Play All</button>
                     <div class="video-container">
                         <div class="item">
                             <h4 class="small-title">Standard Coulomb Friction Model</h4>
@@ -340,6 +343,7 @@
                 <!-- 4th Group of 5 Videos -->
                 <div class="video-group">
                     <h3 class="small-big-title">Sample EGAD! Object (1x original speed)</h3>
+                    <button class="play-all-btn" onclick="playAllInGroup('group1')">▶ Play All</button>
                     <div class="video-container">
                         <div class="item">
                             <h4 class="small-title">Standard Coulomb Friction Model</h4>
@@ -377,6 +381,7 @@
                 <!-- 5th Group of 5 Videos -->
                 <div class="video-group">
                     <h3 class="small-big-title">Coin (1x original speed)</h3>
+                    <button class="play-all-btn" onclick="playAllInGroup('group1')">▶ Play All</button>
                     <div class="video-container">
                         <div class="item">
                             <h4 class="small-title">Standard Coulomb Friction Model</h4>
@@ -414,6 +419,7 @@
                 <!-- 6th Group of 5 Videos -->
                 <div class="video-group">
                     <h3 class="small-big-title">Big Glass Container (1x original speed)</h3>
+                    <button class="play-all-btn" onclick="playAllInGroup('group1')">▶ Play All</button>
                     <div class="video-container">
                         <div class="item">
                             <h4 class="small-title">Standard Coulomb Friction Model</h4>
@@ -451,6 +457,7 @@
                 <!-- 7th Group of 5 Videos -->
                 <div class="video-group">
                     <h3 class="small-big-title">Disc (1x original speed)</h3>
+                    <button class="play-all-btn" onclick="playAllInGroup('group1')">▶ Play All</button>
                     <div class="video-container">
                         <div class="item">
                             <h4 class="small-title">Standard Coulomb Friction Model</h4>
@@ -508,6 +515,7 @@
                 <!-- 1st Group of 5 Videos -->
                 <div class="video-group2">
                     <h3 class="small-big-title">3 Gussets (1x original speed)</h3>
+                    <button class="play-all-btn" onclick="playAllInGroup('group2')">▶ Play All</button>
                     <div class="video-container">
                         <div class="item">
                             <h4 class="small-title">Standard Coulomb Friction Model</h4>
@@ -545,6 +553,7 @@
                 <!-- 2nd Group of 5 Videos -->
                 <div class="video-group2">
                     <h3 class="small-big-title">4 Coins (1x original speed)</h3>
+                    <button class="play-all-btn" onclick="playAllInGroup('group2')">▶ Play All</button>
                     <div class="video-container">
                         <div class="item">
                             <h4 class="small-title">Standard Coulomb Friction Model</h4>
@@ -582,6 +591,7 @@
                 <!-- 3rd Group of 5 Videos -->
                 <div class="video-group2">
                     <h3 class="small-big-title">4 Small Glass Containers (1x original speed)</h3>
+                    <button class="play-all-btn" onclick="playAllInGroup('group2')">▶ Play All</button>
                     <div class="video-container">
                         <div class="item">
                             <h4 class="small-title">Standard Coulomb Friction Model</h4>
@@ -637,6 +647,7 @@
                 <!-- 1st Group of 5 Videos -->
                 <div class="video-group3">
                     <h3 class="small-big-title">Sponge: Hard Side (1x original speed) </h3>
+                    <button class="play-all-btn" onclick="playAllInGroup('group3')">▶ Play All</button>
                     <div class="video-container">
                         <div class="item">
                             <h4 class="small-title">Standard Coulomb Friction Model</h4>
@@ -674,6 +685,7 @@
                 <!-- 2nd Group of 5 Videos -->
                 <div class="video-group3">
                     <h3 class="small-big-title">Sponge: Soft Side (1x original speed)</h3>
+                    <button class="play-all-btn" onclick="playAllInGroup('group3')">▶ Play All</button>
                     <div class="video-container">
                         <div class="item">
                             <h4 class="small-title">Standard Coulomb Friction Model</h4>
@@ -715,6 +727,24 @@
 </section>
 
 <style>
+    .play-all-btn {
+        background-color: #3273dc;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9em;
+        margin-bottom: 10px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .play-all-btn:hover {
+        background-color: #2366d1;
+    }
+
     .video-scroll-container {
         display: flex;
         align-items: center;
@@ -819,8 +849,14 @@
         }
     }
 
+    // Function to manually play all videos in a group
+    function playAllInGroup(groupType) {
+        const videos = getActiveGroupVideos(groupType);
+        resetAndPlayGroup(videos);
+    }
+
     // Function to setup video synchronization for a group
-    function setupVideoSync(groupType) {
+    function setupVideoSync(groupType, autoplay = true) {
         const videos = getActiveGroupVideos(groupType);
         
         // Reset sync state
@@ -835,11 +871,16 @@
             video._syncHandler = () => handleVideoEnd(groupType);
             video.addEventListener('ended', video._syncHandler);
             
-            // Start the video
-            video.currentTime = 0;
-            video.play();
+            // Start the video if autoplay is enabled
+            if (autoplay) {
+                video.currentTime = 0;
+                video.play();
+            }
         });
     }
+
+    // Make playAllInGroup globally accessible
+    window.playAllInGroup = playAllInGroup;
 
     // JavaScript to handle navigation for Group 1
     const videoGroups = document.querySelectorAll('.video-group');
