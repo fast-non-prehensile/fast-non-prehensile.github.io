@@ -233,7 +233,7 @@
                     <div class="video-container">
                         <div class="item">
                             <h4 class="small-title">Standard Coulomb Friction Model</h4>
-                            <video poster="" id="cube_CC" controls muted playsinline>
+                            <video poster="" id="cube_CC" controls muted playsinline autoplay>
                                 <source src="videos/cube/cube_CC.mp4" type="video/mp4">
                             </video>
                         </div>
@@ -814,16 +814,17 @@
 </style>
 
 <script>
+document.addEventListener('DOMContentLoaded', function() {
     // Global state for video synchronization
     let videoSync = {
-        group1: { endedCount: 0, allEnded: false },
-        group2: { endedCount: 0, allEnded: false },
-        group3: { endedCount: 0, allEnded: false }
+        group1: { endedCount: 0 },
+        group2: { endedCount: 0 },
+        group3: { endedCount: 0 }
     };
 
     // Function to get videos in the currently active group
     function getActiveGroupVideos(groupType) {
-        const activeGroup = document.querySelector(`.${groupType}.active`);
+        const activeGroup = document.querySelector(`.video-${groupType}.active`);
         return activeGroup ? Array.from(activeGroup.querySelectorAll('video')) : [];
     }
 
@@ -831,7 +832,7 @@
     function resetAndPlayGroup(videos) {
         videos.forEach(video => {
             video.currentTime = 0;
-            video.play();
+            video.play().catch(e => console.log('Play prevented:', e));
         });
     }
 
@@ -852,11 +853,15 @@
     // Function to manually play all videos in a group
     function playAllInGroup(groupType) {
         const videos = getActiveGroupVideos(groupType);
+        videoSync[groupType].endedCount = 0;
         resetAndPlayGroup(videos);
     }
 
+    // Make playAllInGroup globally accessible
+    window.playAllInGroup = playAllInGroup;
+
     // Function to setup video synchronization for a group
-    function setupVideoSync(groupType, autoplay = true) {
+    function setupVideoSync(groupType) {
         const videos = getActiveGroupVideos(groupType);
         
         // Reset sync state
@@ -870,32 +875,37 @@
             // Create and store the handler for this video
             video._syncHandler = () => handleVideoEnd(groupType);
             video.addEventListener('ended', video._syncHandler);
-            
-            // Start the video if autoplay is enabled
-            if (autoplay) {
-                video.currentTime = 0;
-                video.play();
-            }
         });
     }
-
-    // Make playAllInGroup globally accessible
-    window.playAllInGroup = playAllInGroup;
 
     // JavaScript to handle navigation for Group 1
     const videoGroups = document.querySelectorAll('.video-group');
     let currentGroup = 0;
 
-    // Show the first group initially
-    videoGroups[currentGroup].classList.add('active');
-    setupVideoSync('group1');
+    // Show the first group initially and setup sync
+    if (videoGroups.length > 0) {
+        videoGroups[currentGroup].classList.add('active');
+        setupVideoSync('group');
+        
+        // Try autoplay after a short delay
+        setTimeout(() => {
+            playAllInGroup('group');
+        }, 500);
+    }
 
     // Function to update video groups
     function updateGroup(index) {
+        // Pause all videos in current group
+        const currentVideos = getActiveGroupVideos('group');
+        currentVideos.forEach(v => v.pause());
+        
         videoGroups[currentGroup].classList.remove('active');
         currentGroup = index;
         videoGroups[currentGroup].classList.add('active');
-        setupVideoSync('group1');
+        setupVideoSync('group');
+        
+        // Auto-start new group
+        setTimeout(() => playAllInGroup('group'), 100);
     }
 
     // Handle next button with looping
@@ -921,15 +931,24 @@
     let currentGroup2 = 0;
 
     // Show the first group initially
-    videoGroups2[currentGroup2].classList.add('active');
-    setupVideoSync('group2');
+    if (videoGroups2.length > 0) {
+        videoGroups2[currentGroup2].classList.add('active');
+        setupVideoSync('group2');
+    }
 
     // Function to update video groups
     function updateGroup2(index) {
+        // Pause all videos in current group
+        const currentVideos = getActiveGroupVideos('group2');
+        currentVideos.forEach(v => v.pause());
+        
         videoGroups2[currentGroup2].classList.remove('active');
         currentGroup2 = index;
         videoGroups2[currentGroup2].classList.add('active');
         setupVideoSync('group2');
+        
+        // Auto-start new group
+        setTimeout(() => playAllInGroup('group2'), 100);
     }
 
     // Handle next button with looping
@@ -955,15 +974,24 @@
     let currentGroup3 = 0;
 
     // Show the first group initially
-    videoGroups3[currentGroup3].classList.add('active');
-    setupVideoSync('group3');
+    if (videoGroups3.length > 0) {
+        videoGroups3[currentGroup3].classList.add('active');
+        setupVideoSync('group3');
+    }
 
     // Function to update video groups
     function updateGroup3(index) {
+        // Pause all videos in current group
+        const currentVideos = getActiveGroupVideos('group3');
+        currentVideos.forEach(v => v.pause());
+        
         videoGroups3[currentGroup3].classList.remove('active');
         currentGroup3 = index;
         videoGroups3[currentGroup3].classList.add('active');
         setupVideoSync('group3');
+        
+        // Auto-start new group
+        setTimeout(() => playAllInGroup('group3'), 100);
     }
 
     // Handle next button with looping
@@ -983,7 +1011,7 @@
             updateGroup3(videoGroups3.length - 1); // Loop to the last group
         }
     });
-
+});
 </script>
 
 <footer class="footer">
