@@ -905,6 +905,33 @@
     </div>
 </footer>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const videos = Array.from(document.querySelectorAll('video'));
+    let readyCount = 0, started = false, total = videos.length;
+
+    // initially pause & reset everyone
+    videos.forEach(v => { v.pause(); v.currentTime = 0; });
+
+    // when each video can fully play through
+    videos.forEach(v => {
+    v.addEventListener('canplaythrough', () => {
+        readyCount++;
+        if (readyCount === total) {
+        // all ready → start together
+        videos.forEach(x => { x.currentTime = 0; x.play(); });
+        started = true;
+        }
+    });
+
+    // on any end, restart everyone together
+    v.addEventListener('ended', () => {
+        if (!started) return;
+        videos.forEach(x => { x.currentTime = 0; x.play(); });
+    });
+    });
+});
+</script>
 
 </body> 
 
