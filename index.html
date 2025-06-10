@@ -1162,25 +1162,25 @@ document.addEventListener('DOMContentLoaded', function() {
                         Experiments where objects fall off the tray are failure cases. On success, we measure object displacements relative to the tray in millimeters.
                     </p>
                     <style>
-                        /* Ensure table displays fully, no scroll, minimal cell size, no word wrapping */
+                        /* Make table wider, allow overflow, and prevent word wrapping */
                         .table-container {
-                            overflow-x: visible !important;
-                            width: 100% !important;
-                            max-width: 100% !important;
-                            margin-left: 0 !important;
-                            transform: none !important;
+                            overflow-x: auto !important;
+                            width: 100vw !important;
+                            max-width: none !important;
+                            margin-left: 50%;
+                            transform: translateX(-50%);
                             padding-bottom: 1em !important;
                         }
                         .table-container table {
-                            min-width: 0 !important;
-                            width: 100% !important;
-                            max-width: 100% !important;
-                            table-layout: fixed !important;
+                            min-width: 1600px !important;
+                            width: auto !important;
+                            max-width: none !important;
+                            table-layout: auto !important;
                         }
                         .table-container th, .table-container td {
                             white-space: nowrap !important;
-                            font-size: 0.82em !important;
-                            padding: 2px 4px !important;
+                            font-size: 0.95em !important;
+                            padding: 6px 12px !important;
                         }
 
                         @media (max-width: 1400px) {
