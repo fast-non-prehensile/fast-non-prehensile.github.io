@@ -1162,26 +1162,28 @@ document.addEventListener('DOMContentLoaded', function() {
                         Experiments where objects fall off the tray are failure cases. On success, we measure object displacements relative to the tray in millimeters.
                     </p>
                     <style>
-                        /* Make the table full width and prevent horizontal scroll */
+                        /* Remove table container scroll and allow table to take full width */
                         .table-container {
-                            overflow-x: visible;
+                            overflow-x: unset;
                             width: 100vw;
-                            margin-left: calc(-50vw + 50%);
+                            max-width: 100vw;
+                            margin-left: 50%;
+                            transform: translateX(-50%);
                             padding-bottom: 1em;
                         }
                         .table-container table {
-                            min-width: 0;
+                            min-width: unset;
                             width: 100vw;
                             max-width: 100vw;
                             table-layout: auto;
                         }
-                        .table-container {
+                        /* .table-container {
                             overflow-x: auto;
                             width: 100%;
                             padding-bottom: 1em;
                         }
                         .table-container table {
-                            min-width: 1200px; /* Ensures the table is wide enough to show all columns */
+                            min-width: 1200px; 
                             width: 100%;
                             table-layout: fixed;
                         }
@@ -1189,7 +1191,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             font-size: 0.95em;
                             padding: 6px 8px;
                             word-break: break-word;
-                        }
+                        } */
                         @media (max-width: 1400px) {
                             .table-container table {
                                 min-width: 1000px;
