@@ -1159,8 +1159,44 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h2 class="title is-3">Quantitative Results</h2>
                 <div class="content has-text-justified">
                     <p>
-                        The table below summarizes the quantitative results of object displacement for different objects and constraint models. Lower displacement indicates better performance.
+                        Experiments where objects fall off the tray are failure cases. On success, we measure object displacements relative to the tray in millimeters.
                     </p>
+                    <style>
+                        /* Make the table fit within the container and allow horizontal scrolling if needed */
+                        .table-container {
+                            overflow-x: auto;
+                            width: 100%;
+                            padding-bottom: 1em;
+                        }
+                        .table-container table {
+                            min-width: 1200px; /* Ensures the table is wide enough to show all columns */
+                            width: 100%;
+                            table-layout: fixed;
+                        }
+                        .table-container th, .table-container td {
+                            font-size: 0.95em;
+                            padding: 6px 8px;
+                            word-break: break-word;
+                        }
+                        @media (max-width: 1400px) {
+                            .table-container table {
+                                min-width: 1000px;
+                            }
+                            .table-container th, .table-container td {
+                                font-size: 0.85em;
+                                padding: 4px 6px;
+                            }
+                        }
+                        @media (max-width: 900px) {
+                            .table-container table {
+                                min-width: 800px;
+                            }
+                            .table-container th, .table-container td {
+                                font-size: 0.75em;
+                                padding: 3px 4px;
+                            }
+                        }
+                    </style>
                     <div class="table-container">
                         <style>
                         table {
@@ -1204,19 +1240,19 @@ document.addEventListener('DOMContentLoaded', function() {
                             <th>Sponge<sup>(a)</sup> soft side</th>
                             </tr>
                             <tr>
-                            <th>Material / μ<sub>s</sub></th>
-                            <th>PLA / 0.21</th>
-                            <th>Aluminum / 0.18</th>
-                            <th>Glass / 0.17</th>
-                            <th>PLA / 0.21</th>
-                            <th>Cupronickel / 0.21</th>
-                            <th>Glass / 0.17</th>
-                            <th>Aluminum / 0.18</th>
-                            <th>Cupronickel / 0.21</th>
-                            <th>Glass / 0.17</th>
-                            <th>Polycarbonate / 0.30</th>
-                            <th>Polymer / 0.21</th>
-                            <th>Foam / 0.25</th>
+                            <th>Material, μ<sub>s</sub></th>
+                            <th>PLA, 0.21</th>
+                            <th>Aluminum, 0.18</th>
+                            <th>Glass, 0.17</th>
+                            <th>PLA, 0.21</th>
+                            <th>Cupronickel, 0.21</th>
+                            <th>Glass, 0.17</th>
+                            <th>Aluminum, 0.18</th>
+                            <th>Cupronickel, 0.21</th>
+                            <th>Glass, 0.17</th>
+                            <th>Polycarbonate, 0.30</th>
+                            <th>Polymer, 0.21</th>
+                            <th>Foam, 0.25</th>
                             </tr>
                         </thead>
                         <tbody>
