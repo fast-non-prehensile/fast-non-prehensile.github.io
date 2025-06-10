@@ -192,7 +192,7 @@
                 <div class="content has-text-justified">
                     <div class="video-container">
                         <figure>
-                            <video poster="" id="abstract_video" controls muted playsinline autoplay>
+                            <video poster="" id="abstract_video" controls muted playsinline autoplay loop></video>
                                 <source src="videos/glass4_glass.mp4" type="video/mp4">
                             </video>
                         </figure>
@@ -238,13 +238,13 @@
                 <div class="content has-text-justified">
                     <!-- bullet points -->
                     <p>
-                        Moving objects with a tray enables us to:
+                        Advantages of transporting objects with a tray include:
                     </p>
                     <ul>
-                        <li>Handle hard-to-grasp objects easily</li>
-                        <li>Transport multiple objects simultaneously</li>
-                        <li>Avoid computation for rigid grasps</li>
-                        <li>Require minimal end-effector actuation</li>
+                        <li>Handling hard-to-grasp objects easily</li>
+                        <li>Transporting multiple objects simultaneously</li>
+                        <li>Avoiding computation for rigid grasps</li>
+                        <li>Requiring minimal end-effector actuation</li>
                     </ul>
                     <p>
                         However, non-prehensile transport requires carefully balancing forces to avoid damage. 
@@ -252,7 +252,7 @@
                     <!-- video -->
                     <div class="video-container">
                         <figure>
-                            <video poster="" id="no_constraint" controls muted playsinline autoplay>
+                            <video poster="" id="no_constraint" controls muted playsinline autoplay loop>
                                 <source src="videos/failure_0.2.mov" type="video/mp4">
                             </video>
                             <figcaption class="caption">Unbalanced unilateral forces lead to damage. (0.2x original speed)</figcaption>
@@ -278,6 +278,29 @@
                         We propose a novel method to learn a friction model using acoustic sensing that maps a tray's motion profile to a dynamically conditioned friction coefficient. 
                         This learned model enables an optimization-based motion planner to adjust the friction constraint at each control step according to the planned motion at that step.
                     </p>
+                    <!-- 2 side by side videos -->
+                    <div class="video-container">
+                        <div class="video-item">
+                            <video poster="" id="model_cube" controls muted playsinline autoplay loop>
+                                <source src="videos/data_collection/model_cube_1080.mov" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-item">
+                            <video poster="" id="model_glass" controls muted playsinline autoplay loop>
+                                <source src="videos/data_collection/model_glass_1080.mov" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <p>
+                        To learn the model, we accelerates the tray with an object on it repeatedly and use a contact microphone to detect when sliding starts, from which we get the accelerations and velocities that trigger sliding. 
+                        We collect data with a PLA cube and a glass container, and train 2 models.
+                    </p>
+                    <!-- plot -->
+                    <div class="plot-container">
+                        <figure>
+                            <img src="videos/learned_function.png" alt="Friction Model Comparison">
+                        </figure>
+                    </div>
                 </div>
             </div>
         </div>
