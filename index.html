@@ -1161,8 +1161,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p>
                         Experiments where objects fall off the tray are failure cases. On success, we measure object displacements relative to the tray in millimeters.
                     </p>
+                    
                     <style>
-                        /* Make table wider, allow overflow, and prevent word wrapping */
+                        /* Make table wider, allow overflow, and center it */
                         .table-container {
                             overflow-x: auto !important;
                             width: 100vw !important;
@@ -1170,17 +1171,23 @@ document.addEventListener('DOMContentLoaded', function() {
                             margin-left: 50%;
                             transform: translateX(-50%);
                             padding-bottom: 1em !important;
+                            display: flex;
+                            justify-content: center;
                         }
                         .table-container table {
                             min-width: 1600px !important;
                             width: auto !important;
                             max-width: none !important;
                             table-layout: auto !important;
+                            margin-left: auto;
+                            margin-right: auto;
                         }
                         .table-container th, .table-container td {
                             white-space: nowrap !important;
                             font-size: 0.95em !important;
                             padding: 6px 12px !important;
+                            text-align: center !important; /* Center all cell text */
+                            vertical-align: middle !important;
                         }
 
                         @media (max-width: 1400px) {
