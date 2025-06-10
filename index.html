@@ -178,7 +178,15 @@
 </section>
 <style>
     /* Reduce space between arXiv button and intro video */
-    section.hero + section.section {
+    body > section.hero + section.section {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    body > section.hero {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    body > section.section {
         margin-top: 0 !important;
         padding-top: 0 !important;
     }
@@ -282,6 +290,7 @@
                             </video>
                             <figcaption class="caption">Using the standard Coulomb friction model, object remains on the tray, but slides significantly. (0.2x original speed)</figcaption>
                         </figure>
+                    </div>
                     <p>
                         We propose a novel method to learn a friction model using acoustic sensing that maps a tray's motion profile to a dynamically conditioned friction coefficient. 
                         This learned model enables an optimization-based motion planner to adjust the friction constraint at each control step according to the planned motion at that step.
