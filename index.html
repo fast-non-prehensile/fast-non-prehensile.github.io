@@ -1152,6 +1152,135 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<section class="section"></section>
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full">
+                <h2 class="title is-3">Quantitative Results</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        The table below summarizes the quantitative results of object displacement for different objects and constraint models. Lower displacement indicates better performance.
+                    </p>
+                    <div class="table-container">
+                        <style>
+                        table {
+                            border-collapse: collapse;
+                            width: 100%;
+                        }
+                        th, td {
+                            border: 1px solid #444;
+                            padding: 6px 12px;
+                            text-align: center;
+                        }
+                        th {
+                            background: #eee;
+                        }
+                        .min {
+                            background: #fffa9e;
+                        }
+                        caption {
+                            caption-side: top;
+                            font-weight: bold;
+                            margin-bottom: 8px;
+                        }
+                        </style>
+
+                        <table>
+                        <caption>Mean object displacement [mm] after transport.</caption>
+                        <thead>
+                            <tr>
+                            <th></th>
+                            <th>Cube ×1</th>
+                            <th>Gusset ×1</th>
+                            <th>Glass small ×1</th>
+                            <th>EGAD!<sup>(a)</sup> ×1</th>
+                            <th>Coin ×1</th>
+                            <th>Glass big ×1</th>
+                            <th>Gusset ×3</th>
+                            <th>Coin ×4</th>
+                            <th>Glass small ×4</th>
+                            <th>Disc ×1</th>
+                            <th>Sponge<sup>(a)</sup> hard side</th>
+                            <th>Sponge<sup>(a)</sup> soft side</th>
+                            </tr>
+                            <tr>
+                            <th>Material / μ<sub>s</sub></th>
+                            <th>PLA / 0.21</th>
+                            <th>Aluminum / 0.18</th>
+                            <th>Glass / 0.17</th>
+                            <th>PLA / 0.21</th>
+                            <th>Cupronickel / 0.21</th>
+                            <th>Glass / 0.17</th>
+                            <th>Aluminum / 0.18</th>
+                            <th>Cupronickel / 0.21</th>
+                            <th>Glass / 0.17</th>
+                            <th>Polycarbonate / 0.30</th>
+                            <th>Polymer / 0.21</th>
+                            <th>Foam / 0.25</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <th>Coulomb</th>
+                            <td>18.3</td><td>15.9</td><td>15.3</td><td>18.9</td><td>14.7</td>
+                            <td>8.2</td><td>16.7</td><td>18.3</td><td>13.2</td><td>15.1</td>
+                            <td>21.2</td><td>13.6</td>
+                            </tr>
+                            <tr>
+                            <th>Learned-PLA</th>
+                            <td>8.1</td><td>6.1</td><td>2.8</td><td>9.8</td><td>7.6</td>
+                            <td>2.6</td><td>9.0</td><td>12.4</td><td>3.1</td><td>5.3</td>
+                            <td>13.7</td><td>9.9</td>
+                            </tr>
+                            <tr>
+                            <th>Learned-Glass</th>
+                            <td class="min">2.7</td>
+                            <td class="min">1.5</td>
+                            <td class="min">1.4</td>
+                            <td class="min">3.1</td>
+                            <td class="min">1.9</td>
+                            <td class="min">1.7</td>
+                            <td class="min">4.6</td>
+                            <td class="min">1.8</td>
+                            <td class="min">1.5</td>
+                            <td class="min">1.4</td>
+                            <td class="min">2.9</td>
+                            <td>1.7</td>
+                            </tr>
+                            <tr>
+                            <th>AS-Coulomb</th>
+                            <td>3.9</td><td>2.7</td><td>2.1</td><td>4.4</td><td>3.2</td>
+                            <td>2.3</td>
+                            <td class="min">4.6</td>
+                            <td>3.6</td><td>2.3</td><td>3.8</td><td>5.8</td>
+                            <td class="min">1.1</td>
+                            </tr>
+                            <tr>
+                            <th>AS-No Constraints</th>
+                            <td>Fail</td><td>Fail</td><td>Fail</td><td>Fail</td><td>35.2</td>
+                            <td>-*</td><td>Fail</td><td>26.5</td><td>Fail</td><td>21.2</td>
+                            <td>38.5</td><td>15.6</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                            <td colspan="13" style="text-align:left">
+                                Assumption violations: (a) uneven contact surface. * Not tested for safety reasons.
+                            </td>
+                            </tr>
+                        </tfoot>
+                        </table>
+                    </div>
+                    <p>
+                        The learned friction models significantly reduce object displacement compared to the standard Coulomb friction model.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <footer class="footer">
     <div class="container">
         <div class="content has-text-centered">
