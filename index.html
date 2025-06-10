@@ -288,9 +288,10 @@
                             <video poster="" id="failure_video" controls muted playsinline autoplay loop>
                                 <source src="videos/cube_CC_0.2.mov" type="video/mp4">
                             </video>
-                            <figcaption class="caption">Using the standard Coulomb friction model, object remains on the tray, but slides significantly. (0.2x original speed)</figcaption>
+                            <figcaption class="caption" style="text-align: left;">Using the standard Coulomb friction model, object remains on the tray, but slides significantly. (0.2x original speed)</figcaption>
                         </figure>
                     </div>
+                    <br>
                     <p>
                         We propose a novel method to learn a friction model using acoustic sensing that maps a tray's motion profile to a dynamically conditioned friction coefficient. 
                         This learned model enables an optimization-based motion planner to adjust the friction constraint at each control step according to the planned motion at that step.
@@ -308,6 +309,7 @@
                             </video>
                         </div>
                     </div>
+                    <br>
                     <p>
                         To learn the model, we accelerates the tray with an object on it repeatedly and use a contact microphone to detect when sliding starts, from which we get the accelerations and velocities that trigger sliding. 
                         We collect data with a PLA cube and a glass container, and train 2 models.
@@ -315,7 +317,8 @@
                     <!-- plot -->
                     <div class="plot-container">
                         <figure>
-                            <img src="videos/learned_function.png" alt="Friction Model Comparison">
+                            <img src="videos/learned_function.png" alt="Friction Model Comparison" style="max-width: 400px; width: 100%; height: auto;">
+                            <figcaption class="caption">Visualization of the trained models.</figcaption>
                         </figure>
                     </div>
                 </div>
