@@ -219,7 +219,34 @@
                     </ul>
                     <p>
                         However, non-prehensile transport requires carefully balancing forces to avoid damage. 
-                        While prior works explore keeping objects on a tray during transport, we focus on improving speed and reliability by learning unmodeled effects.
+                    </p>
+                    <!-- video -->
+                    <div class="video-container">
+                        <video poster="" id="no_constraint" controls muted playsinline>
+                            <source src="videos/failure_0.2.mov" type="video/mp4">
+                            <!-- caption -->
+                            <div class="caption"> Unbalanced unilateral forces lead to damage. (0.2x original speed)</div>
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full">
+                <h2 class="title is-3">Acoustic-Guided Constraint Learning</h2>
+                <div class="content has-text-justified">
+                   <p>
+                        Most planners rely on the stand Coulomb friction model to prevent object sliding. 
+                        However, at high speeds, robot vibrations and subtle dynamics cause objects to move well before the model predicts.
+                   </p>
+                    <p>
+                        We propose a novel method to learn a friction model using acoustic sensing that maps a tray's motion profile to a dynamically conditioned friction coefficient. 
+                        This learned model enables an optimization-based motion planner to adjust the friction constraint at each control step according to the planned motion at that step.
                     </p>
                 </div>
             </div>
