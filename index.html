@@ -1162,23 +1162,25 @@ document.addEventListener('DOMContentLoaded', function() {
                         Experiments where objects fall off the tray are failure cases. On success, we measure object displacements relative to the tray in millimeters.
                     </p>
                     <style>
-                        /* Remove table container scroll and allow table to take full width */
+                        /* Ensure table displays fully, no scroll, minimal cell size, no word wrapping */
                         .table-container {
-                            overflow-x: auto;
+                            overflow-x: visible;
                             width: 100%;
-                            max-width: 100vw;
+                            max-width: none;
                             margin-left: 0;
                             transform: none;
                             padding-bottom: 1em;
                         }
                         .table-container table {
-                            min-width: 900px;
+                            min-width: 0;
                             width: auto;
-                            max-width: 100%;
+                            max-width: none;
                             table-layout: auto;
                         }
                         .table-container th, .table-container td {
                             white-space: nowrap;
+                            font-size: 0.85em;
+                            padding: 2px 6px;
                         }
 
                         @media (max-width: 1400px) {
@@ -1351,7 +1353,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </table>
                     </div>
                     <p>
-                        The learned friction models significantly reduce object displacement compared to the standard Coulomb friction model.
+                        All objects transported with constraints using the learned friction model show improved performance, with object displacement reduced by an average of 53.9% and 86.0% with the PLA model and the more conservative glass model respectively.
                     </p>
                 </div>
             </div>
