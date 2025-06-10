@@ -1162,7 +1162,19 @@ document.addEventListener('DOMContentLoaded', function() {
                         Experiments where objects fall off the tray are failure cases. On success, we measure object displacements relative to the tray in millimeters.
                     </p>
                     <style>
-                        /* Make the table fit within the container and allow horizontal scrolling if needed */
+                        /* Make the table full width and prevent horizontal scroll */
+                        .table-container {
+                            overflow-x: visible;
+                            width: 100vw;
+                            margin-left: calc(-50vw + 50%);
+                            padding-bottom: 1em;
+                        }
+                        .table-container table {
+                            min-width: 0;
+                            width: 100vw;
+                            max-width: 100vw;
+                            table-layout: auto;
+                        }
                         .table-container {
                             overflow-x: auto;
                             width: 100%;
@@ -1225,34 +1237,73 @@ document.addEventListener('DOMContentLoaded', function() {
                         <caption>Mean object displacement [mm] after transport.</caption>
                         <thead>
                             <tr>
-                            <th></th>
-                            <th>Cube ×1</th>
-                            <th>Gusset ×1</th>
-                            <th>Glass small ×1</th>
-                            <th>EGAD!<sup>(a)</sup> ×1</th>
-                            <th>Coin ×1</th>
-                            <th>Glass big ×1</th>
-                            <th>Gusset ×3</th>
-                            <th>Coin ×4</th>
-                            <th>Glass small ×4</th>
-                            <th>Disc ×1</th>
-                            <th>Sponge<sup>(a)</sup> hard side</th>
-                            <th>Sponge<sup>(a)</sup> soft side</th>
+                                <th></th>
+                                <th>Cube<br>×1</th>
+                                <th>Gusset<br>×1</th>
+                                <th>Glass small<br>×1</th>
+                                <th>EGAD!<sup>(a)</sup><br>×1</th>
+                                <th>Coin<br>×1</th>
+                                <th>Glass big<br>×1</th>
+                                <th>Gusset<br>×3</th>
+                                <th>Coin<br>×4</th>
+                                <th>Glass small<br>×4</th>
+                                <th>Disc<br>×1</th>
+                                <th>Sponge<sup>(a)</sup><br>hard side</th>
+                                <th>Sponge<sup>(a)</sup><br>soft side</th>
                             </tr>
                             <tr>
-                            <th>Material, μ<sub>s</sub></th>
-                            <th>PLA, 0.21</th>
-                            <th>Aluminum, 0.18</th>
-                            <th>Glass, 0.17</th>
-                            <th>PLA, 0.21</th>
-                            <th>Cupronickel, 0.21</th>
-                            <th>Glass, 0.17</th>
-                            <th>Aluminum, 0.18</th>
-                            <th>Cupronickel, 0.21</th>
-                            <th>Glass, 0.17</th>
-                            <th>Polycarbonate, 0.30</th>
-                            <th>Polymer, 0.21</th>
-                            <th>Foam, 0.25</th>
+                            <th>
+                                Material<br>
+                                μ<sub>s</sub>
+                            </th>
+                            <th>
+                                PLA<br>
+                                0.21
+                            </th>
+                            <th>
+                                Aluminum<br>
+                                0.18
+                            </th>
+                            <th>
+                                Glass<br>
+                                0.17
+                            </th>
+                            <th>
+                                PLA<br>
+                                0.21
+                            </th>
+                            <th>
+                                Cupronickel<br>
+                                0.21
+                            </th>
+                            <th>
+                                Glass<br>
+                                0.17
+                            </th>
+                            <th>
+                                Aluminum<br>
+                                0.18
+                            </th>
+                            <th>
+                                Cupronickel<br>
+                                0.21
+                            </th>
+                            <th>
+                                Glass<br>
+                                0.17
+                            </th>
+                            <th>
+                                Polycarbonate<br>
+                                0.30
+                            </th>
+                            <th>
+                                Polymer<br>
+                                0.21
+                            </th>
+                            <th>
+                                Foam<br>
+                                0.25
+                            </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1301,7 +1352,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         <tfoot>
                             <tr>
                             <td colspan="13" style="text-align:left">
-                                Assumption violations: (a) uneven contact surface. * Not tested for safety reasons.
+                                Assumption violations: (a) uneven contact surface.<br>
+                                * Not tested for safety reasons.
                             </td>
                             </tr>
                         </tfoot>
