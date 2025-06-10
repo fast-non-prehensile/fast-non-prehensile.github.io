@@ -1164,23 +1164,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     <style>
                         /* Ensure table displays fully, no scroll, minimal cell size, no word wrapping */
                         .table-container {
-                            overflow-x: visible;
-                            width: 100%;
-                            max-width: none;
-                            margin-left: 0;
-                            transform: none;
-                            padding-bottom: 1em;
+                            overflow-x: visible !important;
+                            width: 100% !important;
+                            max-width: 100% !important;
+                            margin-left: 0 !important;
+                            transform: none !important;
+                            padding-bottom: 1em !important;
                         }
                         .table-container table {
-                            min-width: 0;
-                            width: auto;
-                            max-width: none;
-                            table-layout: auto;
+                            min-width: 0 !important;
+                            width: 100% !important;
+                            max-width: 100% !important;
+                            table-layout: fixed !important;
                         }
                         .table-container th, .table-container td {
-                            white-space: nowrap;
-                            font-size: 0.85em;
-                            padding: 2px 6px;
+                            white-space: nowrap !important;
+                            font-size: 0.82em !important;
+                            padding: 2px 4px !important;
                         }
 
                         @media (max-width: 1400px) {
